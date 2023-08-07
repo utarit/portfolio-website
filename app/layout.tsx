@@ -35,7 +35,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="container mx-auto px-4">
+      <body className="container max-w-xl mx-auto px-4">
         <Navbar />
         <CatGif />
         {children}
