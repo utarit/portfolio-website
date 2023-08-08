@@ -18,3 +18,16 @@ body {
   color: var(--foreground-rgb);
   background: var(--background-rgb);
 }
+
+html {
+  font-family: var(--font-document);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+}

@@ -2,6 +2,8 @@ import Navbar from "@/components/Navbar";
 import "./globals.css";
 import type { Metadata } from "next";
 import CatGif from "@/components/CatGif";
+import { headingFont, documentFont } from "./fonts";
+import classNames from "classnames";
 
 export const metadata: Metadata = {
   title: "Potfolio - Mert AKCA",
@@ -34,8 +36,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className="container max-w-xl mx-auto px-4">
+    <html
+      lang="en"
+      className={classNames(documentFont.variable, headingFont.variable)}
+    >
+      <body className="container max-w-xl mx-auto px-4 text-black bg-gray-200 dark:text-white dark:bg-gray-800">
         <Navbar />
         <CatGif />
         {children}

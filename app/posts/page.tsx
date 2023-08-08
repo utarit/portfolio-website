@@ -38,7 +38,7 @@ const PostsPage = () => {
           <GridItem
             key={el.url}
             url={el.url}
-            title={el.title}
+            description={el.title}
             thumbnail={el.thumbnail}
             blank
           />

@@ -51,9 +51,9 @@ export default function Home() {
         </p>
         <Link
           href="/works"
-          className="bg-teal-300 hover:bg-teal-400 active:bg-teal-500 text-black px-4 py-2 rounded-md mt-4 font-semibold inline-block"
+          className="bg-teal-600 dark:bg-teal-400 hover:bg-teal-500 active:bg-teal-600 text-white dark:text-black px-4 py-2 rounded-md mt-4 font-semibold inline-block"
         >
-          My Works
+          My Works &gt;
         </Link>
       </section>
       <section>

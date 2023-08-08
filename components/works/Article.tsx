@@ -23,7 +23,7 @@ const Article = ({ title, year, children, pills, images }: Props) => {
           </Link>
           &gt;
           <h2 className="text-xl">{title}</h2>
-          <time className="self-start bg-gray-600 text-xs px-1 font-bold rounded-sm">
+          <time className="self-start dark:bg-gray-600 bg-gray-200 text-xs px-1 font-bold rounded-sm">
             {year}
           </time>
         </header>
@@ -31,7 +31,7 @@ const Article = ({ title, year, children, pills, images }: Props) => {
         <dl className="grid grid-cols-[96px_auto] gap-4 py-4">
           {pills.map((el) => (
             <>
-              <dt className="bg-green-600 bg-opacity-10 text-green-200 rounded uppercase text-xs px-1 font-bold flex justify-center items-center">
+              <dt className="bg-green-200 text-green-900 dark:bg-opacity-10 dark:bg-green-500  dark:text-green-200 rounded uppercase text-xs px-1 font-bold flex justify-center items-center">
                 {el.label}
               </dt>
               <dd>
