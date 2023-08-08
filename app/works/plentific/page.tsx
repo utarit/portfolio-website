@@ -17,7 +17,7 @@ const PlentificPage = () => {
         },
         {
           label: "Stack",
-          value: "React.js, TypeScript, React Query, Stroybook",
+          value: "React.js, TypeScript, React Query, Storybook, MUI, CI/CD",
         },
       ]}
       images={["/images/plentific.png", "/images/plentific2.png"]}

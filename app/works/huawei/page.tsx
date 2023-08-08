@@ -4,7 +4,7 @@ import React from "react";
 const HuaweiPage = () => {
   return (
     <Article
-      title="HMS Map Kit"
+      title="Huawei Mobile Services"
       year="2020"
       pills={[
         { label: "Website", value: "https://developer.huawei.com/" },
@@ -21,8 +21,10 @@ const HuaweiPage = () => {
       ]}
       images={["/images/hms-map.jpg", "/images/hms-map2.png"]}
     >
-      React Native Map Plugin enables users to use native map services in their
-      React Native apps.
+      Huawei Mobile Services enables developers to intergrate Huawei services
+      like HMS Map, HMS Health, HMS Nearby, etc. HMS Services are available for
+      React Native, Flutter, Ionic/Capacitor, Xamarin platforms for people to
+      use.
     </Article>
   );
 };

@@ -17,11 +17,11 @@ const works = [
     title: "Secret Hunters",
     desc: "A mystery-based game series with interactive elements",
     url: "/secret-hunters",
-    thumbnail: "/images/plentific2.png",
+    thumbnail: "/images/secret-hunters.png",
   },
   {
     title: "Huawei",
-    desc: "Huawei services for react native and Javascript based platform",
+    desc: "Huawei services for React Native and JavaScript based platform",
     url: "/huawei",
     thumbnail: "/images/hms-map.jpg",
   },
