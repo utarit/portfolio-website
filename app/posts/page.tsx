@@ -33,7 +33,7 @@ const posts = [
 
 const PostsPage = () => {
   return (
-    <main>
+    <>
       <h2 className="text-xl my-4">Posts</h2>
       <Banner emoji="📰">
         <small>
@@ -53,7 +53,7 @@ const PostsPage = () => {
           />
         ))}
       </ul>
-    </main>
+    </>
   );
 };
 

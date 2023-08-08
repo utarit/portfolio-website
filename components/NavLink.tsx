@@ -1,5 +1,5 @@
-import Link from "next/link";
 import React, { ComponentProps } from "react";
+import Link from "next/link";
 
 const NavLink = (props: ComponentProps<typeof Link>) => {
   return (

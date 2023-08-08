@@ -12,7 +12,7 @@ const Navbar = () => {
   const pathname = usePathname();
 
   return (
-    <header className="z-10 flex gap-5 py-2 pl-4 fixed bg-orange-300 dark:bg-gray-800 bg-opacity-60 dark:bg-opacity-60 backdrop-blur left-0 right-0">
+    <header className="z-10 flex gap-5 py-2 pl-4 bg-orange-300 dark:bg-gray-900 bg-opacity-60 dark:bg-opacity-60 backdrop-blur fixed left-0 right-0">
       <Link href="/" className="group flex gap-3 items-center">
         <Image
           className="group-hover:rotate-[20deg] dark:invert"
@@ -27,13 +27,13 @@ const Navbar = () => {
       <nav className="flex gap-2">
         <NavLink
           href="/works"
-          className={classNames("p-2", pathname === "/works" && "bg-teal-400")}
+          className={classNames("p-2", pathname === "/works" && "bg-teal-600")}
         >
           Works
         </NavLink>
         <NavLink
           href="/posts"
-          className={classNames("p-2", pathname === "/posts" && "bg-teal-400")}
+          className={classNames("p-2", pathname === "/posts" && "bg-teal-600")}
         >
           Posts
         </NavLink>

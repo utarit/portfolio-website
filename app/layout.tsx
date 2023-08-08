@@ -45,10 +45,16 @@ export default function RootLayout({
       lang="en"
       className={classNames(documentFont.variable, headingFont.variable)}
     >
-      <body className="container max-w-xl mx-auto px-4">
+      <head>
+        {/* eslint-disable-next-line @next/next/no-sync-scripts */}
+        <script src="/theme.js" />
+      </head>
+      <body className="text-black bg-orange-100 dark:text-white dark:bg-gray-800">
         <Navbar />
-        <CatGif />
-        {children}
+        <main className="container max-w-xl mx-auto px-4">
+          <CatGif />
+          {children}
+        </main>
         <Footer />
         <Analytics />
       </body>

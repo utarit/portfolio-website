@@ -26,7 +26,7 @@ const timeline = [
 
 export default function Home() {
   return (
-    <main className="flex flex-col">
+    <article className="flex flex-col">
       <section className="flex justify-between gap-4">
         <header>
           <h2 className="text-4xl">Mert Akça</h2>
@@ -55,7 +55,7 @@ export default function Home() {
         <Banner>
           <p className="text-sm">
             <strong>Fun fact:</strong> This website is <em>div-free</em> !{" "}
-            <small>but not span free, woops</small>
+            <small>but not span free, woops!</small>
           </p>
         </Banner>
 
@@ -99,6 +99,6 @@ export default function Home() {
           </li>
         </ul>
       </section>
-    </main>
+    </article>
   );
 }
