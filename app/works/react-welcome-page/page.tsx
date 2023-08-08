@@ -1,6 +1,7 @@
 import React from "react";
 import { Metadata } from "next";
 
+import Banner from "@/components/Banner";
 import Article from "@/components/works/Article";
 
 export const metadata: Metadata = {
@@ -35,8 +36,16 @@ const ReactLibraryPage = () => {
         "/images/react-welcome-page-demo.png",
       ]}
     >
-      Simple animated customizable welcome screen component that works for both
-      React and React Native platforms.
+      <p>
+        Simple animated customizable welcome screen component that works for
+        both React and React Native platforms.
+        <Banner emoji="📱">
+          <small>
+            My first time using abstraction in practice here thanks to{" "}
+            <code>*.android.js, *.native.js</code> extensions.
+          </small>
+        </Banner>
+      </p>
     </Article>
   );
 };

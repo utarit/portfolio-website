@@ -5,7 +5,7 @@ import Link from "next/link";
 type Props = {
   title: string;
   year: string;
-  children: string;
+  children: React.ReactNode;
   pills: Array<{
     label: string;
     value: string;
@@ -27,7 +27,11 @@ const Article = ({ title, year, children, pills, images }: Props) => {
             {year}
           </time>
         </header>
-        <p className="indent-4">{children}</p>
+        {typeof children === "string" ? (
+          <p className="indent-4">{children}</p>
+        ) : (
+          children
+        )}
         <dl className="grid grid-cols-[96px_auto] gap-4 py-4">
           {pills.map((el) => (
             <>

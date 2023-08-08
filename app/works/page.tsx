@@ -1,6 +1,7 @@
 import React from "react";
 import { Metadata } from "next";
 
+import Banner from "@/components/Banner";
 import GridItem from "@/components/works/GridItem";
 
 export const metadata: Metadata = {
@@ -75,6 +76,12 @@ const WorksPage = () => {
           />
         ))}
       </ul>
+      <Banner emoji="🤖">
+        <p>
+          Is Prompt engineering a thing yet? I am highly skilled in using
+          chatGPT.
+        </p>
+      </Banner>
       <hr className="my-12 h-0.5 border-t-0 bg-neutral-100 opacity-100 dark:opacity-50" />
       <h2 className="text-xl my-4">Old Works</h2>
       <ul className="grid grid-cols-1 md:grid-cols-2 gap-6">

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import Banner from "@/components/Banner";
 import SectionHeading from "@/components/headings/SectionHeading";
 import SocialButton from "@/components/SocialButton";
 
@@ -50,6 +51,14 @@ export default function Home() {
           to make a positive impact on people&apos;s lives through my work and
           hope to continue doing so.
         </p>
+
+        <Banner>
+          <p className="text-sm">
+            <strong>Fun fact:</strong> This website is <em>div-free</em> !{" "}
+            <small>but not span free, woops</small>
+          </p>
+        </Banner>
+
         <Link
           href="/works"
           className="bg-teal-600 dark:bg-teal-400 hover:bg-teal-500 active:bg-teal-600 text-white dark:text-black px-4 py-2 rounded-md mt-4 font-semibold inline-block"

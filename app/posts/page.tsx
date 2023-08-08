@@ -1,5 +1,6 @@
 import React from "react";
 
+import Banner from "@/components/Banner";
 import GridItem from "@/components/works/GridItem";
 
 const posts = [
@@ -34,6 +35,13 @@ const PostsPage = () => {
   return (
     <main>
       <h2 className="text-xl my-4">Posts</h2>
+      <Banner emoji="📰">
+        <small>
+          I actually wrote these articles for another blog site as a volunteer
+          technical writer. They suddenly closed and I had to get my articles
+          from web arcives. I only got some of them.
+        </small>
+      </Banner>
       <ul className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {posts.map((el) => (
           <GridItem

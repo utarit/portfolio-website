@@ -1,6 +1,7 @@
 import React from "react";
 import { Metadata } from "next";
 
+import Banner from "@/components/Banner";
 import Article from "@/components/works/Article";
 
 export const metadata: Metadata = {
@@ -33,10 +34,18 @@ const UnikitPage = () => {
       ]}
       images={["/images/unikit.png", "/images/unikit2.png"]}
     >
-      UniKit is an app designed to assist students in managing their school life
-      as efficiently as possible. UniKit communicates with the school&apos;s
-      information system and utilizes a local database to store courses and
-      to-do data.
+      <p>
+        UniKit is an app designed to assist students in managing their school
+        life as efficiently as possible. UniKit communicates with the
+        school&apos;s information system and utilizes a local database to store
+        courses and to-do data.
+      </p>
+      <Banner emoji="🦠">
+        <small>
+          Right after it was released, the Covid-19 outbreak occurred, leading
+          everyone to stay at home.
+        </small>
+      </Banner>
     </Article>
   );
 };
