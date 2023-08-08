@@ -40,7 +40,7 @@ export default function RootLayout({
       lang="en"
       className={classNames(documentFont.variable, headingFont.variable)}
     >
-      <body className="container max-w-xl mx-auto px-4 text-black bg-gray-200 dark:text-white dark:bg-gray-800">
+      <body className="container max-w-xl mx-auto px-4">
         <Navbar />
         <CatGif />
         {children}

@@ -22,7 +22,7 @@ const GridItem = ({ thumbnail, title, description, url, blank }: Props) => {
           width={400}
         />
       </Link>
-      {title && <h3 className="text-xl mt-2">{title}</h3>}
+      {title && <h3 className="text-xl mt-2 font-medium">{title}</h3>}
       <p className={classNames(!title && "mt-2")}>{description}</p>
     </li>
   );

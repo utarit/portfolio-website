@@ -11,7 +11,7 @@ const Navbar = () => {
   const pathname = usePathname();
 
   return (
-    <header className="flex gap-5 py-2">
+    <header className="z-10 flex gap-5 py-2 pl-4 fixed bg-orange-300 dark:bg-gray-800 bg-opacity-60 dark:bg-opacity-60 backdrop-blur left-0 right-0">
       <Link href="/" className="group flex gap-3 items-center">
         <Image
           className="group-hover:rotate-[20deg] dark:invert"

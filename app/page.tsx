@@ -56,7 +56,7 @@ export default function Home() {
           My Works &gt;
         </Link>
       </section>
-      <section>
+      <section className="my-4">
         <SectionHeading>A small timeline</SectionHeading>
         <table>
           <tbody>
