@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import CatGif from "@/components/CatGif";
 import { headingFont, documentFont } from "./fonts";
 import classNames from "classnames";
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Potfolio - Mert AKCA",
@@ -44,6 +45,7 @@ export default function RootLayout({
         <Navbar />
         <CatGif />
         {children}
+        <Footer />
       </body>
     </html>
   );
