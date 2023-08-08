@@ -82,7 +82,7 @@ const WorksPage = () => {
           ChatGPT.
         </p>
       </Banner>
-      <hr className="my-12 h-0.5 border-t-0 bg-neutral-100 opacity-100 dark:opacity-50" />
+      <hr className="my-6 h-0.5 border-t-0 bg-neutral-800 dark:bg-neutral-100 opacity-100 dark:opacity-50" />
       <h2 className="text-xl my-4">Old Works</h2>
       <ul className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {oldWorks.map((el) => (
