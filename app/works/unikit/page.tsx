@@ -1,5 +1,10 @@
 import Article from "@/components/works/Article";
 import React from "react";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "UniKit - Mert AKCA",
+};
 
 const UnikitPage = () => {
   return (

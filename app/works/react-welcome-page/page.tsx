@@ -1,5 +1,10 @@
 import Article from "@/components/works/Article";
 import React from "react";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "React Welcome Page - Mert AKCA",
+};
 
 const ReactLibraryPage = () => {
   return (

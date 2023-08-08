@@ -1,5 +1,10 @@
 import Article from "@/components/works/Article";
+import { Metadata } from "next";
 import React from "react";
+
+export const metadata: Metadata = {
+  title: "OCİT First Aid App - Mert AKCA",
+};
 
 const OcitPage = () => {
   return (

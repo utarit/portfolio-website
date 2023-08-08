@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 import CatGif from "@/components/CatGif";
 
 export const metadata: Metadata = {
-  title: "Mert AKCA - Potfolio",
+  title: "Potfolio - Mert AKCA",
   description: "Some works and posts by Mert Akça's hand, and a cute cat.",
   icons: [
     { rel: "icon", sizes: "32x32", url: "/favicon-32x32.png" },
