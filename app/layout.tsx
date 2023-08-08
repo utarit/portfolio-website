@@ -1,10 +1,12 @@
 import Navbar from "@/components/Navbar";
-import "./globals.css";
 import type { Metadata } from "next";
 import CatGif from "@/components/CatGif";
 import { headingFont, documentFont } from "./fonts";
 import classNames from "classnames";
 import Footer from "@/components/Footer";
+import { Analytics } from "@vercel/analytics/react";
+
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Potfolio - Mert AKCA",
@@ -46,6 +48,7 @@ export default function RootLayout({
         <CatGif />
         {children}
         <Footer />
+        <Analytics />
       </body>
     </html>
   );
