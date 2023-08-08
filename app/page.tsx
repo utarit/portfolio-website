@@ -1,7 +1,8 @@
-import SocialButton from "@/components/SocialButton";
-import SectionHeading from "@/components/headings/SectionHeading";
 import Image from "next/image";
 import Link from "next/link";
+
+import SectionHeading from "@/components/headings/SectionHeading";
+import SocialButton from "@/components/SocialButton";
 
 const timeline = [
   {

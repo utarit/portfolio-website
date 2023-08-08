@@ -1,10 +1,12 @@
-import Navbar from "@/components/Navbar";
-import type { Metadata } from "next";
-import CatGif from "@/components/CatGif";
-import { headingFont, documentFont } from "./fonts";
-import classNames from "classnames";
-import Footer from "@/components/Footer";
 import { Analytics } from "@vercel/analytics/react";
+import classNames from "classnames";
+import type { Metadata } from "next";
+
+import CatGif from "@/components/CatGif";
+import Footer from "@/components/Footer";
+import Navbar from "@/components/Navbar";
+
+import { documentFont, headingFont } from "./fonts";
 
 import "./globals.css";
 

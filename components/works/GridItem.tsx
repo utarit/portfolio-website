@@ -1,7 +1,7 @@
+import React from "react";
 import classNames from "classnames";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
 
 type Props = {
   thumbnail: string;

@@ -1,6 +1,7 @@
-import GridItem from "@/components/works/GridItem";
-import { Metadata } from "next";
 import React from "react";
+import { Metadata } from "next";
+
+import GridItem from "@/components/works/GridItem";
 
 export const metadata: Metadata = {
   title: "Works - Mert AKCA",

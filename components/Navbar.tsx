@@ -1,11 +1,12 @@
 "use client";
 
+import React, { useCallback, useEffect } from "react";
+import classNames from "classnames";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useCallback, useEffect } from "react";
-import NavLink from "./NavLink";
-import classNames from "classnames";
 import { usePathname } from "next/navigation";
+
+import NavLink from "./NavLink";
 
 const Navbar = () => {
   const pathname = usePathname();

@@ -1,5 +1,6 @@
-import GridItem from "@/components/works/GridItem";
 import React from "react";
+
+import GridItem from "@/components/works/GridItem";
 
 const posts = [
   {
