@@ -63,6 +63,7 @@ const ThemeToggle = () => {
       Theme:{" "}
       <select
         className="dark:text-black p-1"
+        name="theme"
         value={theme}
         onChange={handleChange}
       >

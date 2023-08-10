@@ -8,6 +8,21 @@ import { usePathname } from "next/navigation";
 
 import NavLink from "./NavLink";
 
+const tabs = [
+  {
+    label: "Works",
+    path: "/works",
+  },
+  {
+    label: "Posts",
+    path: "/posts",
+  },
+  {
+    label: "Contact",
+    path: "/contact",
+  },
+];
+
 const Navbar = () => {
   const pathname = usePathname();
 
@@ -25,18 +40,18 @@ const Navbar = () => {
       </Link>
 
       <nav className="flex gap-2">
-        <NavLink
-          href="/works"
-          className={classNames("p-2", pathname === "/works" && "bg-teal-600")}
-        >
-          Works
-        </NavLink>
-        <NavLink
-          href="/posts"
-          className={classNames("p-2", pathname === "/posts" && "bg-teal-600")}
-        >
-          Posts
-        </NavLink>
+        {tabs.map((tab) => (
+          <NavLink
+            key={tab.path}
+            href={tab.path}
+            className={classNames(
+              "p-2",
+              pathname === tab.path && "bg-teal-500"
+            )}
+          >
+            {tab.label}
+          </NavLink>
+        ))}
       </nav>
     </header>
   );
