@@ -10,6 +10,7 @@ const CatGif = () => {
         alt="Cat drinking coffee"
         width={300}
         height={300}
+        priority
       />
     </aside>
   );
