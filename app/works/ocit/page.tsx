@@ -37,7 +37,7 @@ const OcitPage = () => {
       <p>
         Leveraging my extensive knowledge in first aid, I developed an app to
         help increase public awareness and assist people in emergency
-        situations. The app includes gifs demonstrating step-by-step procedures
+        situations. The app includes GIFs demonstrating step-by-step procedures
         and a blog section powered by Firebase for additional information.
       </p>
       <Banner emoji="💻">

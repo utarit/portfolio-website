@@ -27,7 +27,7 @@ const HuaweiPage = () => {
       ]}
       images={["/images/hms-map.jpg", "/images/hms-map2.png"]}
     >
-      Huawei Mobile Services enables developers to intergrate Huawei services
+      Huawei Mobile Services enables developers to integrate Huawei services
       like HMS Map, HMS Health, HMS Nearby, etc. HMS Services are available for
       React Native, Flutter, Ionic/Capacitor, Xamarin platforms for people to
       use.
