@@ -21,6 +21,10 @@ const tabs = [
     label: "Contact",
     path: "/contact",
   },
+  {
+    label: "Zehra is Missing",
+    path: "/zehra",
+  },
 ];
 
 const Navbar = () => {

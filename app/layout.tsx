@@ -1,11 +1,8 @@
 import { Analytics } from "@vercel/analytics/react";
-import { SpeedInsights } from "@vercel/speed-insights/next"
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import classNames from "classnames";
 import type { Metadata } from "next";
-
-import CatGif from "@/components/CatGif";
-import Footer from "@/components/Footer";
-import Navbar from "@/components/Navbar";
+import Script from "next/script";
 
 import { documentFont, headingFont } from "./fonts";
 
@@ -47,18 +44,12 @@ export default function RootLayout({
       className={classNames(documentFont.variable, headingFont.variable)}
     >
       <head>
-        {/* eslint-disable-next-line @next/next/no-sync-scripts */}
-        <script src="/theme.js" />
+        <Script src="/theme.js" />
       </head>
       <body className="text-black bg-orange-100 dark:text-white dark:bg-gray-800">
-        <Navbar />
-        <main className="container max-w-xl mx-auto px-4">
-          <CatGif />
-          {children}
-        </main>
-        <Footer />
+        {children}
         <Analytics />
-        <SpeedInsights/>
+        <SpeedInsights />
       </body>
     </html>
   );
