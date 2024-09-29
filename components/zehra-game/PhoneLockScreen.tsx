@@ -50,7 +50,7 @@ const PhoneLockScreen: React.FC<PhoneLockScreenProps> = ({
 
   return (
     <div
-      className="w-[300px] h-[500px] flex flex-col justify-center items-center text-white border-4 border-gray-700 rounded-lg overflow-hidden"
+      className="w-[300px] h-[500px] mt-8 flex flex-col justify-center items-center text-white border-4 border-gray-700 rounded-lg overflow-hidden"
       style={lockScreenStyle}
     >
       <h1 className="text-2xl m-4 text-center">{text}</h1>

@@ -68,13 +68,13 @@ const Navbar = () => {
       </button>
 
       {isMenuOpen && (
-        <nav className="fixed right-2 top-12 flex flex-col gap-2 bg-orange-300 dark:bg-gray-900">
+        <nav className="fixed right-4 top-12 flex flex-col gap-2 bg-orange-300 dark:bg-gray-900 rounded-md">
           {tabs.map((tab) => (
             <Link
               key={tab.path}
               href={tab.path}
               className={classNames(
-                "hover:underline underline-offset-4 p-2",
+                "hover:underline underline-offset-4 p-4",
                 pathname.includes(tab.path) && "bg-teal-500"
               )}
             >

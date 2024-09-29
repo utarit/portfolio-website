@@ -75,7 +75,7 @@ const ChatApp = ({
           selectedContact={selectedContactName}
         />
       </div>
-      <div>
+      <div className="flex flex-col-reverse md:flex-col">
         {selectedContactIndex !== null && (
           <Messenger
             key={selectedContactName}
@@ -84,7 +84,7 @@ const ChatApp = ({
           />
         )}
         {chatOptionsForSelectedContact && onOptionClick && (
-          <div className="flex flex-col gap-2 mt-3 mb-16 md:mb-3 sm:min-w-[600px]">
+          <div className="flex flex-col gap-2 mt-3 sm:min-w-[600px]">
             {chatOptionsForSelectedContact.map((option) => (
               <button
                 className="text-left bg-slate-300 p-4 rounded-md hover:bg-slate-400 active:bg-slate-500 disabled:text-gray-500 disabled:cursor-not-allowed disabled:line-through"

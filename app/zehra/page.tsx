@@ -10,13 +10,13 @@ import MarketCameraReport from "@/components/zehra-game/zehra/MarketCameraReport
 const ZehraPage = () => {
   return (
     <main className="pt-20">
-      <div className="flex flex-col justify-center items-center">
+      <div className="flex flex-col justify-center items-center mb-4 md:mb-0">
         <Image
           src="/zehra/zehra-is-missing.png"
           width={500}
           height={300}
           alt="Zehra game logo"
-          className="rounded-lg"
+          className="md:rounded-lg"
         />
         <Link
           href="https://drive.google.com/file/d/12aS9ZrRgljpcJc7dA24GsyUc2vC1-bBK/view"
