@@ -1,12 +1,11 @@
 import React from "react";
-
 import Image from "next/image";
+import Link from "next/link";
 
 import ChestPuzzle from "@/components/zehra-game/zehra/ChestPuzzle";
 import FinalChat from "@/components/zehra-game/zehra/FinalChat";
 import HiddenMessages from "@/components/zehra-game/zehra/HiddenMessages";
 import MarketCameraReport from "@/components/zehra-game/zehra/MarketCameraReport";
-import Link from "next/link";
 
 const ZehraPage = () => {
   return (
