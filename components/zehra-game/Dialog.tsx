@@ -39,6 +39,11 @@ const CloseIcon = () => {
 const Dialog = ({ children, disabledCloseButton, onClose }: Props) => {
   useEffect(() => {
     window.scrollTo(0, 0);
+    document.body.style.overflow = "hidden";
+
+    return () => {
+      document.body.style.overflow = "auto";
+    };
   }, []);
 
   return (
@@ -50,13 +55,13 @@ const Dialog = ({ children, disabledCloseButton, onClose }: Props) => {
           animation: "fadeIn 0.5s forwards",
         }}
       >
-        <div className="text-black flex justify-between items-baseline border-b border-black mb-2 pb-2">
-          <h3 className="text-center text-2xl font-bold">
+        <div className="text-black flex justify-between items-baseline border-b border-black p-4">
+          <h3 className="text-2xl font-bold">
             <EyeIcon />
             Your eyes only
             <EyeIcon />
           </h3>
-          <div className="flex justify-end mt-2">
+          <div className="flex justify-end">
             <button
               disabled={disabledCloseButton}
               onClick={onClose}

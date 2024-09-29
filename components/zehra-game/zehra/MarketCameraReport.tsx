@@ -37,7 +37,7 @@ const MarketCameraReport = () => {
       />
       {isDialogOpen && (
         <Dialog onClose={() => setIsDialogOpen(false)}>
-          <div className="flex flex-col items-center justify-center">
+          <div className="flex flex-col gap-4 p-4 h-full md:h-[600px] overflow-scroll">
             <Image
               src="/zehra/mail.jpeg"
               width={800}

@@ -14,10 +14,11 @@ const ZehraPage = () => {
     <main className="pt-16">
       <div className="flex justify-center">
         <Image
-          src="/zehra/secret-hunters-zehra.png"
+          src="/zehra/zehra-is-missing.png"
           width={500}
           height={300}
           alt="Zehra game logo"
+          className="rounded-lg"
         />
       </div>
 

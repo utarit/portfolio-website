@@ -63,7 +63,7 @@ const FinalChat = () => {
         onClick={handleOpenDialog}
         type="button"
       >
-        Suçlama yapmaya hazırım.
+        Suçlama yapmaya hazırım
       </button>
       {isDialogOpen && (
         <Dialog
@@ -74,7 +74,7 @@ const FinalChat = () => {
           }}
         >
           <ChatApp
-            owner="The Dedective"
+            owner="Dedektif"
             contacts={contacts}
             chatOptions={getFinalSentences}
             onOptionClick={handleSelectOption}

@@ -21,9 +21,9 @@ const PersonList = ({
 }: PersonListProps) => {
   return (
     <div className="mt-4">
-      <div className="bg-slate-50 p-4 rounded-lg shadow-md">
+      <div className="bg-slate-50 p-4 md:rounded-lg shadow-md">
         <h2 className="text-xl font-bold mb-4">Contacts</h2>
-        <ul>
+        <ul className="overflow-auto max-h-[215px]">
           {contacts.map((contact, index) => (
             <li
               key={contact.name}
@@ -66,9 +66,9 @@ const ChatApp = ({
   };
 
   return (
-    <div className="flex flex-col md:flex-row gap-4">
+    <div className="flex flex-col md:px-4 md:flex-row gap-4 h-full md:h-fit overflow-auto pb-6">
       <div>
-        <h3>{owner}&apos;s Phone</h3>
+        <h3 className="mt-2 p-2 text-xl font-bold">{owner}&apos;s Phone</h3>
         <PersonList
           contacts={contacts}
           onSelect={handleSelectContact}
@@ -84,7 +84,7 @@ const ChatApp = ({
           />
         )}
         {chatOptionsForSelectedContact && onOptionClick && (
-          <div className="flex flex-col gap-2 mt-3 sm:min-w-[600px]">
+          <div className="flex flex-col gap-2 mt-3 mb-16 md:mb-3 sm:min-w-[600px]">
             {chatOptionsForSelectedContact.map((option) => (
               <button
                 className="text-left bg-slate-300 p-4 rounded-md hover:bg-slate-400 active:bg-slate-500 disabled:text-gray-500 disabled:cursor-not-allowed disabled:line-through"

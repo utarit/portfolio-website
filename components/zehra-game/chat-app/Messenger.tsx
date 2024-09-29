@@ -16,9 +16,11 @@ export interface MessengerProps {
 const Messenger = ({ person, messages }: MessengerProps) => {
   return (
     <div className="w-full mt-4 sm:min-w-[600px]">
-      <div className="bg-green-100 p-4 rounded-lg shadow-md flex-grow overflow-y-auto h-[500px]">
-        <h2 className="text-xl font-bold mb-4">{person}</h2>
-        <div className="border-t-2 border-t-black p-4">
+      <div className="bg-green-100 rounded-lg shadow-md flex-grow overflow-y-auto h-[500px]">
+        <h2 className="bg-green-100 text-xl font-bold p-4 mx-2 mb-4 sticky top-0 border-b-2 border-b-black ">
+          {person}
+        </h2>
+        <div className="p-4">
           {messages.map((message) => (
             <div
               key={message.message}

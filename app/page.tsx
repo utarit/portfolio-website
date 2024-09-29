@@ -42,7 +42,9 @@ export default function Home() {
           </Link>
         </section>
         <section className="my-4">
-          <SectionHeading>My Latest Game (in Turkish for now)</SectionHeading>
+          <SectionHeading>
+            A Mystery Game: Zehra is Missing (in Turkish)
+          </SectionHeading>
           <Image
             height="400"
             width="400"
