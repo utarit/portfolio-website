@@ -1,4 +1,4 @@
-import { Contact } from "@/components/chat-app/ChatApp";
+import { Contact } from "@/components/zehra-game/chat-app/ChatApp";
 
 export const zehraContacts: Contact[] = [
   {

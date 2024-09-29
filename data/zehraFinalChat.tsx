@@ -1,4 +1,4 @@
-import { Message } from "@/components/chat-app/Messenger";
+import { Message } from "@/components/zehra-game/chat-app/Messenger";
 
 export enum ResultType {
   KILLED = "killed",
