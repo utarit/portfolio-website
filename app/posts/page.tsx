@@ -1,33 +1,66 @@
 import React from "react";
 
 import Banner from "@/components/Banner";
+import { MainLayout } from "@/components/layout/main-layout";
 import GridItem from "@/components/works/GridItem";
 
 const posts = [
   {
-    title: "Unveiling Web Accessibility: A Comprehensive Guide to WCAG and ARIA",
-    url: "https://medium.com/@mertakca/unveiling-web-accessibility-a-comprehensive-guide-to-wcag-and-aria-1d7b62bf4e69",
-    thumbnail: "https://miro.medium.com/v2/resize:fit:1400/format:webp/1*IIJH_Z1o9YNFbKuJyZt7Ag.png",
+    title: "HCI Part 3: How We Remember and Why it Matters for Design — Memory",
+    url: "https://medium.com/heyjobs-tech/hci-part-3-how-we-remember-and-why-it-matters-for-design-memory-6e3dba904356",
+    thumbnail:
+      "https://miro.medium.com/v2/resize:fit:720/format:webp/1*-kLeeScOxY_z8WJIL-mpRw.jpeg",
   },
   {
-    title: "Navigating the Web Design Landscape: Unveiling Graceful Degradation and Maximizing Efficiency",
+    title: "HCI Part 2: The Perfect Harmony for UI/UX Design — Vision & Sound",
+    url: "https://medium.com/heyjobs-tech/hci-part-2-the-perfect-harmony-for-ui-ux-design-vision-sound-c3a67dec207d",
+    thumbnail:
+      "https://miro.medium.com/v2/resize:fit:720/format:webp/1*ZqPVGTn366wjZ2jrHVg3NQ.jpeg",
+  },
+  {
+    title: "HCI Part 1: The Underrated Sense Shaping Our Interactions — Touch",
+    url: "https://medium.com/heyjobs-tech/hci-part-1-the-underrated-sense-shaping-our-interactions-touch-ce97a8773a67",
+    thumbnail:
+      "https://miro.medium.com/v2/resize:fit:720/format:webp/1*CtkvMTCvkW-Os2EBoXJtkw.jpeg",
+  },
+  {
+    title: "CSS Only: How to create a blurred background for your image",
+    url: "https://medium.com/@mertakca/css-only-how-to-create-a-blurred-background-for-your-image-1615f57792c0",
+    thumbnail:
+      "https://miro.medium.com/v2/resize:fit:720/format:webp/1*AKH9qZXKNXLy6zwPoyE9qg.png",
+  },
+  {
+    title:
+      "Unveiling Web Accessibility: A Comprehensive Guide to WCAG and ARIA",
+    url: "https://medium.com/@mertakca/unveiling-web-accessibility-a-comprehensive-guide-to-wcag-and-aria-1d7b62bf4e69",
+    thumbnail:
+      "https://miro.medium.com/v2/resize:fit:1400/format:webp/1*IIJH_Z1o9YNFbKuJyZt7Ag.png",
+  },
+  {
+    title: "Unveiling Graceful Degradation and Maximizing Efficiency",
     url: "https://medium.com/@mertakca/navigating-the-web-design-landscape-unveiling-graceful-degradation-and-maximizing-efficiency-8c3df274fec8",
-    thumbnail: "https://miro.medium.com/v2/resize:fit:858/format:webp/0*ipuHiwK0NgemzXMV.png",
+    thumbnail:
+      "https://miro.medium.com/v2/resize:fit:858/format:webp/0*ipuHiwK0NgemzXMV.png",
   },
   {
     title: "Elevating User Journeys: Design, Flow, and Feedback",
     url: "https://medium.com/@mertakca/elevating-user-journeys-design-flow-and-feedback-f4cb405491dd",
-    thumbnail: "https://miro.medium.com/v2/resize:fit:1400/format:webp/1*KwaHMAYP4dVEmlX7g5BLoA.jpeg",
+    thumbnail:
+      "https://miro.medium.com/v2/resize:fit:1400/format:webp/1*KwaHMAYP4dVEmlX7g5BLoA.jpeg",
   },
   {
-    title: "Understanding Perceptual Issues in Web Design: Tips for Front-End Engineers",
+    title:
+      "Understanding Perceptual Issues in Web Design: Tips for Front-End Engineers",
     url: "https://medium.com/@mertakca/understanding-perceptual-issues-in-web-design-tips-for-front-end-engineers-24d0df52881a",
-    thumbnail: "https://miro.medium.com/v2/resize:fit:1400/format:webp/0*RB6hoFLzwAa0-iaP",
+    thumbnail:
+      "https://miro.medium.com/v2/resize:fit:1400/format:webp/0*RB6hoFLzwAa0-iaP",
   },
   {
-    title: "Ten Practical Accessibility Tips Every Front-End Developer Should Know",
+    title:
+      "Ten Practical Accessibility Tips Every Front-End Developer Should Know",
     url: "https://medium.com/@mertakca/ten-practical-accessibility-tips-every-front-end-developer-should-know-e24f1bc292ec",
-    thumbnail: "https://miro.medium.com/v2/resize:fit:1400/format:webp/1*QKcKKHnw38rF9ACzlDSHwg.jpeg",
+    thumbnail:
+      "https://miro.medium.com/v2/resize:fit:1400/format:webp/1*QKcKKHnw38rF9ACzlDSHwg.jpeg",
   },
   {
     title: "Flutter Provider Architecture (🇹🇷)",
@@ -58,14 +91,10 @@ const posts = [
 
 const PostsPage = () => {
   return (
-    <>
-      <h2 className="text-xl my-4">Posts</h2>
-      <Banner emoji="👨‍💻">
-        <small>
-          It looks like I am a designer but actually I am a developer.
-        </small>
-      </Banner>
-      <ul className="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <MainLayout>
+      <h1 className="text-xl my-4">Posts</h1>
+
+      <ul className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
         {posts.map((el) => (
           <GridItem
             key={el.url}
@@ -76,7 +105,7 @@ const PostsPage = () => {
           />
         ))}
       </ul>
-    </>
+    </MainLayout>
   );
 };
 
