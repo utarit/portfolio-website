@@ -50,8 +50,7 @@ const Navbar = () => {
             href={tab.path}
             className={classNames(
               "p-2",
-              pathname === tab.path && "bg-teal-500",
-              pathname === tab.path && pathname === "/zehra" && "bg-purple-500"
+              pathname.includes(tab.path) && "bg-teal-500"
             )}
           >
             {tab.label}

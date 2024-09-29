@@ -6,6 +6,30 @@ import GridItem from "@/components/works/GridItem";
 
 const posts = [
   {
+    title: "HCI Part 3: How We Remember and Why it Matters for Design — Memory",
+    url: "https://medium.com/heyjobs-tech/hci-part-3-how-we-remember-and-why-it-matters-for-design-memory-6e3dba904356",
+    thumbnail:
+      "https://miro.medium.com/v2/resize:fit:720/format:webp/1*-kLeeScOxY_z8WJIL-mpRw.jpeg",
+  },
+  {
+    title: "HCI Part 2: The Perfect Harmony for UI/UX Design — Vision & Sound",
+    url: "https://medium.com/heyjobs-tech/hci-part-2-the-perfect-harmony-for-ui-ux-design-vision-sound-c3a67dec207d",
+    thumbnail:
+      "https://miro.medium.com/v2/resize:fit:720/format:webp/1*ZqPVGTn366wjZ2jrHVg3NQ.jpeg",
+  },
+  {
+    title: "HCI Part 1: The Underrated Sense Shaping Our Interactions — Touch",
+    url: "https://medium.com/heyjobs-tech/hci-part-1-the-underrated-sense-shaping-our-interactions-touch-ce97a8773a67",
+    thumbnail:
+      "https://miro.medium.com/v2/resize:fit:720/format:webp/1*CtkvMTCvkW-Os2EBoXJtkw.jpeg",
+  },
+  {
+    title: "CSS Only: How to create a blurred background for your image",
+    url: "https://medium.com/@mertakca/css-only-how-to-create-a-blurred-background-for-your-image-1615f57792c0",
+    thumbnail:
+      "https://miro.medium.com/v2/resize:fit:720/format:webp/1*AKH9qZXKNXLy6zwPoyE9qg.png",
+  },
+  {
     title:
       "Unveiling Web Accessibility: A Comprehensive Guide to WCAG and ARIA",
     url: "https://medium.com/@mertakca/unveiling-web-accessibility-a-comprehensive-guide-to-wcag-and-aria-1d7b62bf4e69",
@@ -13,8 +37,7 @@ const posts = [
       "https://miro.medium.com/v2/resize:fit:1400/format:webp/1*IIJH_Z1o9YNFbKuJyZt7Ag.png",
   },
   {
-    title:
-      "Navigating the Web Design Landscape: Unveiling Graceful Degradation and Maximizing Efficiency",
+    title: "Unveiling Graceful Degradation and Maximizing Efficiency",
     url: "https://medium.com/@mertakca/navigating-the-web-design-landscape-unveiling-graceful-degradation-and-maximizing-efficiency-8c3df274fec8",
     thumbnail:
       "https://miro.medium.com/v2/resize:fit:858/format:webp/0*ipuHiwK0NgemzXMV.png",
@@ -71,7 +94,7 @@ const PostsPage = () => {
     <MainLayout>
       <h1 className="text-xl my-4">Posts</h1>
 
-      <ul className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <ul className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
         {posts.map((el) => (
           <GridItem
             key={el.url}

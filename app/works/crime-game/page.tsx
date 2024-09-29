@@ -4,13 +4,13 @@ import { Metadata } from "next";
 import Article from "@/components/works/Article";
 
 export const metadata: Metadata = {
-  title: "Secret Hunters - Mert AKCA",
+  title: "Zehra is missing - Mert AKCA",
 };
 
 const SecretHuntersPage = () => {
   return (
     <Article
-      title="Secret Hunters"
+      title="Zehra is missing"
       year="2023"
       pills={[
         {

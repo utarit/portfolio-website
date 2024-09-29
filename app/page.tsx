@@ -9,7 +9,7 @@ import SocialButton from "@/components/SocialButton";
 export default function Home() {
   return (
     <MainLayout>
-      <article className="flex flex-col">
+      <article className="flex flex-col mb-8">
         <section className="flex justify-between gap-4">
           <header>
             <h2 className="text-4xl">Mert Akça</h2>
@@ -63,7 +63,8 @@ export default function Home() {
           </p>
 
           <Link
-            href="https://drive.google.com/file/d/1DMDHivLVKPKmiTIpLmELuRE4Gdo5ZzVf/view"
+            href="/zehra"
+            target="_blank"
             className="bg-teal-600 dark:bg-teal-400 hover:bg-teal-500 active:bg-teal-600 text-white dark:text-black mt-4 px-4 py-2 rounded-md font-semibold inline-block"
           >
             Game Page &gt;
