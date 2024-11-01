@@ -63,6 +63,8 @@ const Navbar = () => {
         onClick={() => {
           setIsMenuOpen((prev) => !prev);
         }}
+        aria-label="Toggle navigation menu"
+        aria-expanded={isMenuOpen}
       >
         <HamburgerButton />
       </button>
