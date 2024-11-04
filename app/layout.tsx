@@ -3,6 +3,8 @@ import classNames from "classnames";
 import type { Metadata } from "next";
 import Script from "next/script";
 
+import Feather from "@/components/Feather";
+
 import { documentFont, headingFont } from "./fonts";
 
 import "./globals.css";
@@ -47,6 +49,7 @@ export default function RootLayout({
       </head>
       <body className="text-black bg-orange-100 dark:text-white dark:bg-gray-800">
         {children}
+        <Feather />
         <Analytics />
       </body>
     </html>
