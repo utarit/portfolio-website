@@ -8,8 +8,9 @@ import { documentFont, headingFont } from "./fonts";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Potfolio - Mert AKCA",
-  description: "Some works and posts by Mert Akça's hand, and a cute cat.",
+  title: "Mert Akça - Front-end Developer & Game Creator",
+  description:
+    "Passionate front-end developer and game creator. Explore my projects, including the intriguing mystery game 'Zehra is Missing.'",
   icons: [
     { rel: "icon", sizes: "32x32", url: "/favicon-32x32.png" },
     { rel: "icon", sizes: "16x16", url: "/favicon-16x16.png" },
@@ -17,11 +18,12 @@ export const metadata: Metadata = {
   ],
   manifest: "/site.webmanifest",
   openGraph: {
-    siteName: "Mert Akca's Portfolio",
-    title: "Mert Akca's Portfolio",
-    description: "Some works and posts by Mert Akça's hand, and a cute cat.",
+    siteName: "Mert Akça - Front-end Developer & Game Creator",
+    title: "Mert Akça - Front-end Developer & Game Creator",
+    description:
+      "Passionate front-end developer and game creator. Explore my projects, including the intriguing mystery game 'Zehra is Missing.",
     type: "website",
-    url: "https://mertakca.live",
+    url: "https://mertsdesk.top",
     images: {
       url: "/cat-drinking.gif",
       type: "image/gif",
@@ -30,6 +32,28 @@ export const metadata: Metadata = {
       width: "300",
     },
   },
+  alternates: {
+    canonical: "https://mertsdesk.top",
+  },
+  keywords: [
+    "front-end developer",
+    "game creator",
+    "puzzle game",
+    "mystery game",
+    "Zehra is Missing",
+    "Mert Akça",
+    "problem-solving",
+    "efficient solutions",
+    "stylish solutions",
+    "accessible solutions",
+    "METU graduate",
+    "caffeine addict",
+    "short film director",
+    "escape room enthusiast",
+    "LinkedIn",
+    "GitHub",
+    "Medium",
+  ],
 };
 
 export default function RootLayout({
