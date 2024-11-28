@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     description:
       "Passionate front-end developer and game creator. Explore my projects, including the intriguing mystery game 'Zehra is Missing.",
     type: "website",
-    url: "https://mertsdesk.top",
+    url: "https://mertsdesk.top/",
     images: {
       url: "/cat-drinking.gif",
       type: "image/gif",
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: "https://mertsdesk.top",
+    canonical: "https://mertsdesk.top/",
   },
   keywords: [
     "front-end developer",
