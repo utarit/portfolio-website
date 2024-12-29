@@ -1,4 +1,5 @@
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import classNames from "classnames";
 import type { Metadata } from "next";
 import Script from "next/script";
@@ -72,6 +73,7 @@ export default function RootLayout({
       <body className="text-black bg-orange-100 dark:text-white dark:bg-gray-800">
         {children}
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
