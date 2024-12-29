@@ -5,7 +5,7 @@ import Banner from "@/components/Banner";
 import Article from "@/components/works/Article";
 
 export const metadata: Metadata = {
-  title: "React Welcome Page - Mert AKCA",
+  title: "React Welcome Page - Mert's Desktop",
 };
 
 const ReactLibraryPage = () => {

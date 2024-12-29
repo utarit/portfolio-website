@@ -40,7 +40,7 @@ const Navbar = () => {
           width={24}
           alt="logo"
         />
-        <h1>Mert Akça</h1>
+        <h1>Mert&apos;s Desktop</h1>
       </Link>
 
       <nav className="hidden md:flex gap-2">

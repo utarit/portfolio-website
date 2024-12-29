@@ -5,7 +5,7 @@ import Banner from "@/components/Banner";
 import Article from "@/components/works/Article";
 
 export const metadata: Metadata = {
-  title: "OCİT First Aid App - Mert AKCA",
+  title: "OCİT First Aid App - Mert's Desktop",
 };
 
 const OcitPage = () => {

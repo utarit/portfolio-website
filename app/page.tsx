@@ -10,10 +10,13 @@ export default function Home() {
   return (
     <MainLayout>
       <article className="flex flex-col mb-8">
-        <section className="flex justify-between gap-4">
+        <section className="flex justify-between gap-4 items-start">
           <header>
             <h2 className="text-4xl">Mert Akça</h2>
-            <p>Front-end developer / Game creator / Cat owner</p>
+            <p aria-hidden className="text-sm mb-1">
+              <i lang="en">/Mehrt AHK-chah/</i>
+            </p>
+            <p>Software engineer / UX enthusiast / Game designer</p>
           </header>
           <Image
             className="rounded-full border-2 border-opacity-80 border-white"
@@ -26,14 +29,19 @@ export default function Home() {
         <section>
           <SectionHeading>Introduction</SectionHeading>
           <p className="text-justify">
-            As a passionate caffeine addict and a graduate of METU, I am driven
-            by my love for coding and problem-solving. My ultimate goal is to
-            provide efficient, stylish, and accessible solutions to real-world
-            issues. In addition to my coding expertise, I also enjoy creating
-            puzzle games, directing short films, and cracking escape rooms.
-            Above all, I strive to make a positive impact on people&apos;s lives
-            through my work and hope to continue doing so.
+            I&apos;m a passionate caffeine enthusiast and METU graduate with a
+            love for user experience and problem-solving. My goal is to deliver
+            efficient, stylish, and accessible solutions to real-world
+            challenges while making a positive impact through my work.
           </p>
+          <ul className="py-4 flex flex-col gap-2">
+            <li>☕ Coffee-fueled coder with a creative mindset</li>
+            <li>🎮 Puzzle game and escape room designer</li>
+            <li>
+              💡 Dedicated to crafting innovative, user-friendly solutions
+            </li>
+            <li>🌟 Driven by the desire to make a meaningful difference</li>
+          </ul>
           <Link
             href="/works"
             className="bg-teal-600 dark:bg-teal-400 hover:bg-teal-500 active:bg-teal-600 text-white dark:text-black px-4 py-2 rounded-md mt-4 font-semibold inline-block"

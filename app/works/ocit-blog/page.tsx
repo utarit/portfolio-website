@@ -4,7 +4,7 @@ import { Metadata } from "next";
 import Article from "@/components/works/Article";
 
 export const metadata: Metadata = {
-  title: "OCİT Blog - Mert AKCA",
+  title: "OCİT Blog - Mert's Desktop",
 };
 
 const OcitBlogPage = () => {

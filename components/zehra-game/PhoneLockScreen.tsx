@@ -49,7 +49,7 @@ const PhoneLockScreen: React.FC<PhoneLockScreenProps> = ({
   };
 
   return (
-    <div
+    <article
       className="w-[300px] h-[500px] mt-8 flex flex-col justify-center items-center text-white border-4 border-gray-700 rounded-lg overflow-hidden"
       style={lockScreenStyle}
     >
@@ -71,7 +71,7 @@ const PhoneLockScreen: React.FC<PhoneLockScreenProps> = ({
           </button>
         ))}
       </div>
-    </div>
+    </article>
   );
 };
 

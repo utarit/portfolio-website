@@ -5,7 +5,7 @@ import Banner from "@/components/Banner";
 import Article from "@/components/works/Article";
 
 export const metadata: Metadata = {
-  title: "UniKit - Mert AKCA",
+  title: "UniKit - Mert's Desktop",
 };
 
 const UnikitPage = () => {

@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     description:
       "Sürükleyici bir suç çözme oyunu ile gerilim dolu dünyayı keşfedin. Sırları çözün, dedektif yeteneklerinizi sınayın ve heyecan verici bir oyun deneyiminin tadını çıkarın. Aile eğlencesi ve stratejik oyun için mükemmel.",
     url: "https://mertsdesk.top/zehra",
-    siteName: "Mert Akca's Desktop",
+    siteName: "Mert's Desktop",
     images: ["/zehra-missing.jpeg"],
   },
 };

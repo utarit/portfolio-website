@@ -8,7 +8,7 @@ import { documentFont, headingFont } from "./fonts";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Mert Akça - Front-end Developer & Game Creator",
+  title: "Mert Akça - Front-end Engineer & UX Enthusiast",
   description:
     "Passionate front-end developer and game creator. Explore my projects, including the intriguing mystery game 'Zehra is Missing.'",
   icons: [
@@ -18,8 +18,8 @@ export const metadata: Metadata = {
   ],
   manifest: "/site.webmanifest",
   openGraph: {
-    siteName: "Mert Akça - Front-end Developer & Game Creator",
-    title: "Mert Akça - Front-end Developer & Game Creator",
+    siteName: "Mert's Desktop",
+    title: "Mert's Desktop",
     description:
       "Passionate front-end developer and game creator. Explore my projects, including the intriguing mystery game 'Zehra is Missing.",
     type: "website",

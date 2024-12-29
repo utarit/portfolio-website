@@ -4,7 +4,7 @@ import { Metadata } from "next";
 import Article from "@/components/works/Article";
 
 export const metadata: Metadata = {
-  title: "VRThings - Mert AKCA",
+  title: "VRThings - Mert's Desktop",
 };
 
 const VrthingsPage = () => {

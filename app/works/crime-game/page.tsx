@@ -4,7 +4,7 @@ import { Metadata } from "next";
 import Article from "@/components/works/Article";
 
 export const metadata: Metadata = {
-  title: "Zehra is missing - Mert AKCA",
+  title: "Zehra is missing - Mert's Desktop",
 };
 
 const SecretHuntersPage = () => {

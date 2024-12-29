@@ -4,7 +4,7 @@ import { Metadata } from "next";
 import Article from "@/components/works/Article";
 
 export const metadata: Metadata = {
-  title: "Plentific - Mert AKCA",
+  title: "Plentific - Mert's Desktop",
 };
 
 const PlentificPage = () => {

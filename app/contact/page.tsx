@@ -7,7 +7,7 @@ const ContactPage = () => {
   return (
     <MainLayout>
       <section>
-        <h1 className="mb-4 text-2xl">Contact me</h1>
+        <h2 className="mb-4 text-2xl">Contact me</h2>
         <form action="https://formspree.io/f/mnqkpdze" method="POST">
           <fieldset className="flex flex-col gap-4 border-2 border-orange-400 dark:border-gray-400 p-4 rounded-md">
             <legend className="px-1">The form</legend>

@@ -4,7 +4,7 @@ import { Metadata } from "next";
 import Article from "@/components/works/Article";
 
 export const metadata: Metadata = {
-  title: "Huawei Mobile Services - Mert AKCA",
+  title: "Huawei Mobile Services - Mert's Desktop",
 };
 
 const HuaweiPage = () => {
