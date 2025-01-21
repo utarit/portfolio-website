@@ -5,6 +5,7 @@ import Banner from "@/components/Banner";
 import SectionHeading from "@/components/headings/SectionHeading";
 import { MainLayout } from "@/components/layout/main-layout";
 import SocialButton from "@/components/SocialButton";
+import { Button } from "@/design-system/Button";
 
 export default function Home() {
   return (
@@ -42,12 +43,9 @@ export default function Home() {
             </li>
             <li>🌟 Driven by the desire to make a meaningful difference</li>
           </ul>
-          <Link
-            href="/works"
-            className="bg-teal-600 dark:bg-teal-400 hover:bg-teal-500 active:bg-teal-600 text-white dark:text-black px-4 py-2 rounded-md mt-4 font-semibold inline-block"
-          >
+          <Button href="/works">
             My Works &gt;
-          </Link>
+          </Button>
         </section>
         <section className="my-4">
           <SectionHeading>
@@ -70,18 +68,18 @@ export default function Home() {
             &apos;Zehra is Missing&apos; awaits!
           </p>
 
-          <Link
+          <Button
             href="/zehra"
             target="_blank"
-            className="bg-teal-600 dark:bg-teal-400 hover:bg-teal-500 active:bg-teal-600 text-white dark:text-black mt-4 px-4 py-2 rounded-md font-semibold inline-block"
+            className="mt-4"
           >
             Game Page &gt;
-          </Link>
+          </Button>
         </section>
 
         <section>
           <SectionHeading>Further Links</SectionHeading>
-          <ul>
+          <ul className="flex flex-col gap-2">
             <li>
               <SocialButton href="https://linkedin.com/in/mertakca">
                 Linkedin @mertakca

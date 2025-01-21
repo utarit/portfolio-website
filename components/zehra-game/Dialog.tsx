@@ -1,5 +1,7 @@
 import React, { useEffect } from "react";
 
+import { Button } from "@/design-system/Button";
+
 interface Props {
   children: React.ReactNode;
   onClose: () => void;
@@ -51,24 +53,22 @@ const Dialog = ({ children, disabledCloseButton, onClose }: Props) => {
       <dialog
         open
         className="top-0 w-full h-full md:top-[20px] md:w-fit md:h-fit md:rounded-md z-10 bg-gray-200"
-        style={{
-          animation: "fadeIn 0.5s forwards",
-        }}
       >
-        <div className="text-black flex justify-between items-baseline border-b border-black p-4">
+        <div className="text-black flex justify-between items-center border-b border-black p-4">
           <h3 className="text-2xl font-bold">
             <EyeIcon />
             Your eyes only
             <EyeIcon />
           </h3>
           <div className="flex justify-end">
-            <button
+            <Button
               disabled={disabledCloseButton}
               onClick={onClose}
-              className="underline disabled:line-through disabled:text-gray-500"
+              variant="contained"
+              color="error"
             >
               <CloseIcon />
-            </button>
+            </Button>
           </div>
         </div>
         {children}

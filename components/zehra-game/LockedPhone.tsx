@@ -1,6 +1,8 @@
 "use client";
 import { useState } from "react";
 
+import { Button } from "@/design-system/Button";
+
 import Dialog from "./Dialog";
 import PhoneLockScreen from "./PhoneLockScreen";
 
@@ -79,19 +81,21 @@ const LockedPhone = ({
 
   return (
     <>
-      <button
+      <Button
+        color="primary"
+        variant="text"
         onClick={handleClick}
-        className="w-[180px] border-2 border-gray-300 rounded-md p-2 flex items-center justify-center flex-col bg-orange-200 hover:bg-orange-100 active:bg-orange-50 dark:bg-gray-900 dark:hover:bg-gray-800 dark:active:bg-gray-700"
+        className="w-[180px] p-2 flex items-center justify-center flex-col border-2 border-background-100"
       >
         <span className="p-2 self-end">
           {isUnlocked ? <UnlockSvg /> : <LockSvg />}
         </span>
         <PhoneSvg />
         <span>{text}</span>
-      </button>
+      </Button>
       {isLockDialogOpen && (
         <Dialog onClose={() => setIsLockDialogOpen(false)}>
-          <div className="flex flex-col items-center justify-center">
+          <div className="flex flex-col items-center justify-center p-4">
             <PhoneLockScreen
               password={password}
               onUnlock={handleUnlock}

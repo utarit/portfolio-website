@@ -6,6 +6,7 @@ import {
   semraContacts,
   zehraContacts,
 } from "@/data/zehraMessages";
+import { Button } from "@/design-system/Button";
 
 import ChatApp from "../chat-app/ChatApp";
 import PuzzleSection from "../helpers/PuzzleSection";
@@ -29,12 +30,14 @@ const hints = [
   },
   {
     name: "Semra",
-    help: "Semra'nın okuduğu kitaplara bakabildin mi? Georde Orwell okumayı seviyor gibi",
+    help:
+      "Semra'nın okuduğu kitaplara bakabildin mi? Georde Orwell okumayı seviyor gibi",
     solution: "Şifre: 1984",
   },
   {
     name: "Rıza",
-    help: "Rıza, Kont Dracula'ya kafayı takmış gibi. Şifre onunla ilgili bir şey olabilir mi?",
+    help:
+      "Rıza, Kont Dracula'ya kafayı takmış gibi. Şifre onunla ilgili bir şey olabilir mi?",
     solution: "Şifre: 1431",
   },
 ];
@@ -88,24 +91,24 @@ const HiddenMessages = () => {
         {hints.map((hint) => (
           <li
             key={hint.name}
-            className="flex gap-2 border border-white p-2 my-2 justify-between bg-orange-200 dark:bg-gray-800"
+            className="flex justify-between items-center gap-2 border border-white p-2 my-2  bg-orange-200 dark:bg-gray-800"
           >
             <p>{hint.name}</p>
-            <div>
-              <button
-                className="hover:underline text-cyan-700 active:text-cyan-600 dark:text-cyan-400 dark:active:text-cyan-300 mr-4"
+            <div className="flex gap-2">
+              <Button
+                color="primary"
                 type="button"
                 onClick={() => alert(hint.help)}
               >
                 İpucu Al
-              </button>
-              <button
-                className="hover:underline text-purple-700 active:text-purple-600 dark:text-purple-400 dark:active:text-purple-300"
+              </Button>
+              <Button
+                variant="text"
                 type="button"
                 onClick={() => alert(hint.solution)}
               >
                 Cevabı göster
-              </button>
+              </Button>
             </div>
           </li>
         ))}

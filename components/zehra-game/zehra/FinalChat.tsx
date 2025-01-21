@@ -8,6 +8,7 @@ import {
   getFinalSentences,
   Suspect,
 } from "@/data/zehraFinalChat";
+import { Button } from "@/design-system/Button";
 
 import ChatApp, { Contact } from "../chat-app/ChatApp";
 import Dialog from "../Dialog";
@@ -25,7 +26,7 @@ const FinalChat = () => {
   const handleOpenDialog = () => {
     if (
       confirm(
-        "Devam etmek istediğinize emin misiniz? Hikayenin finaline gelecek ve sonucu öğreneceksiniz."
+        "Devam etmek istediğinize emin misiniz? Hikayenin finaline gelecek ve sonucu öğreneceksiniz.",
       ) === true
     ) {
       setIsDialogOpen(true);
@@ -58,13 +59,14 @@ const FinalChat = () => {
 
   return (
     <section className="m-4">
-      <button
-        className="bg-red-800 text-white p-2 w-full"
+      <Button
+        fullWidth
+        color="primary"
         onClick={handleOpenDialog}
         type="button"
       >
         Suçlama yapmaya hazırım
-      </button>
+      </Button>
       {isDialogOpen && (
         <Dialog
           disabledCloseButton={messagingInProgress}

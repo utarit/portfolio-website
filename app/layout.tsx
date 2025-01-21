@@ -70,7 +70,7 @@ export default function RootLayout({
       <head>
         <Script src="/theme.js" />
       </head>
-      <body className="text-black bg-orange-100 dark:text-white dark:bg-gray-800">
+      <body className="bg-background-50 text-text-primary">
         {children}
         <Analytics />
         <SpeedInsights />

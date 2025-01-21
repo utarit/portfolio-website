@@ -1,19 +1,22 @@
 import React from "react";
 import Link from "next/link";
 
+import { Button } from "@/design-system/Button";
+
 import ThemeToggle from "./ThemeToggle";
 
 const Footer = () => {
   return (
-    <footer className="py-4 text-xs flex flex-col sm:flex-row justify-around gap-4 p-2 items-center bg-orange-300 dark:bg-gray-900">
+    <footer className="py-4 text-sm flex flex-col sm:flex-row justify-around gap-4 p-2 items-center bg-background-200">
       <p>Made by Mert Akça with 🧋 and 🎧</p>
-      <Link
+      <Button
         href="https://github.com/utarit/portfolio-website"
         target="_blank"
-        className="hover:underline"
+        variant="text"
+        size="sm"
       >
         Source code
-      </Link>
+      </Button>
       <ThemeToggle />
     </footer>
   );

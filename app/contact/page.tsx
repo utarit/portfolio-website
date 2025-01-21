@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 
 import { MainLayout } from "@/components/layout/main-layout";
+import { Button } from "@/design-system/Button";
 
 const ContactPage = () => {
   return (
@@ -50,30 +51,26 @@ const ContactPage = () => {
                 placeholder="I loved the website!"
               />
             </label>
-            <button
-              type="submit"
-              className="bg-orange-400 dark:bg-gray-500 hover:bg-opacity-80 active:bg-opacity-60 dark:hover:bg-opacity-80 dark:active:bg-opacity-60 rounded py-1 px-4 w-fit"
-            >
-              Send
-            </button>
+            <Button type="submit">Send</Button>
           </fieldset>
         </form>
       </section>
 
-      <section className="mt-4">
+      <section className="my-4">
         <h3 className="text-lg mb-2">or just reach me via</h3>
 
         <address>
           <a href="mailto:mertakca.dev@gmail.com">mertakca.dev@gmail.com</a>
         </address>
 
-        <Link
-          className="bg-blue-700 hover:bg-blue-600 active:bg-blue-500 text-white py-1 px-4 rounded mt-4 block w-fit mb-8"
+        <Button
+          color="primary"
+          className="mt-4"
           target="_blank"
           href="https://linkedin.com/in/mertakca"
         >
           My Linkedin
-        </Link>
+        </Button>
       </section>
     </MainLayout>
   );

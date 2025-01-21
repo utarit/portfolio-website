@@ -3,6 +3,7 @@ import classNames from "classnames";
 
 import Messenger, { Message } from "@/components/zehra-game/chat-app/Messenger";
 import { Decision, ResultType, Suspect } from "@/data/zehraFinalChat";
+import { Button } from "@/design-system/Button";
 
 export interface Contact {
   name: string;
@@ -29,7 +30,7 @@ const PersonList = ({
               key={contact.name}
               className={classNames(
                 "cursor-pointer mb-2 p-2 rounded-lg hover:bg-gray-200",
-                selectedContact === contact.name && "bg-gray-300"
+                selectedContact === contact.name && "bg-gray-300",
               )}
               onClick={() => onSelect(index)}
             >
@@ -58,7 +59,7 @@ const ChatApp = ({
   const selectedContactName = contacts[selectedContactIndex].name;
 
   const chatOptionsForSelectedContact = chatOptions?.(
-    selectedContactName as Suspect
+    selectedContactName as Suspect,
   );
 
   const handleSelectContact = (index: number) => {
@@ -86,16 +87,15 @@ const ChatApp = ({
         {chatOptionsForSelectedContact && onOptionClick && (
           <div className="flex flex-col gap-2 mt-3 sm:min-w-[600px]">
             {chatOptionsForSelectedContact.map((option) => (
-              <button
-                className="text-left bg-slate-300 p-4 rounded-md hover:bg-slate-400 active:bg-slate-500 disabled:text-gray-500 disabled:cursor-not-allowed disabled:line-through"
+              <Button
+                color="primary"
                 key={option.message}
                 onClick={() =>
-                  onOptionClick(selectedContactName as Suspect, option)
-                }
+                  onOptionClick(selectedContactName as Suspect, option)}
                 disabled={contacts[selectedContactIndex].messages.length > 0}
               >
                 {option.message}
-              </button>
+              </Button>
             ))}
           </div>
         )}
