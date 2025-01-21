@@ -2,6 +2,8 @@ import React from "react";
 import classNames from "classnames";
 import Link from "next/link";
 
+import { Button } from "@/design-system/Button";
+
 type Props = {
   children: React.ReactNode;
   href: string;
@@ -9,16 +11,13 @@ type Props = {
 
 const SocialButton = ({ children, href }: Props) => {
   return (
-    <Link
+    <Button
       target="_blank"
-      className={classNames(
-        "py-2 px-4 inline-block rounded-md font-semibold",
-        `text-teal-700 dark:text-teal-300 hover:bg-teal-500 hover:bg-opacity-20 active:bg-opacity-40`
-      )}
+      variant="text"
       href={href}
     >
       {children}
-    </Link>
+    </Button>
   );
 };
 

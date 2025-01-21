@@ -6,6 +6,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
+import { Button } from "@/design-system/Button";
+
 const tabs = [
   {
     label: "Works",
@@ -31,8 +33,13 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
   return (
-    <header className="z-10 flex justify-between gap-5 py-4 px-4 bg-orange-300 dark:bg-gray-900 bg-opacity-60 dark:bg-opacity-60 backdrop-blur fixed left-0 right-0">
-      <Link href="/" className="group flex gap-3 items-center">
+    <header className="z-10 flex justify-between gap-5 py-4 px-4 bg-background-200 bg-opacity-60 backdrop-blur fixed left-0 right-0">
+      <Button
+        href="/"
+        variant="text"
+        size="md"
+        className="group flex gap-3 items-center"
+      >
         <Image
           className="group-hover:rotate-[20deg] dark:invert"
           src="/images/footprint.png"
@@ -41,47 +48,51 @@ const Navbar = () => {
           alt="logo"
         />
         <h1>Mert&apos;s Desktop</h1>
-      </Link>
+      </Button>
 
       <nav className="hidden md:flex gap-2">
         {tabs.map((tab) => (
-          <Link
+          <Button
             key={tab.path}
             href={tab.path}
+            variant="text"
+            size="md"
             className={classNames(
-              "hover:underline underline-offset-4 p-2",
-              pathname.includes(tab.path) && "bg-teal-500"
+              pathname.includes(tab.path) && "bg-background-300",
             )}
           >
             {tab.label}
-          </Link>
+          </Button>
         ))}
       </nav>
 
-      <button
+      <Button
         className="md:hidden"
         onClick={() => {
           setIsMenuOpen((prev) => !prev);
         }}
         aria-label="Toggle navigation menu"
         aria-expanded={isMenuOpen}
+        variant="text"
       >
         <HamburgerButton />
-      </button>
+      </Button>
 
       {isMenuOpen && (
-        <nav className="fixed right-4 top-12 flex flex-col gap-2 bg-orange-300 dark:bg-gray-900 rounded-md">
+        <nav className="fixed right-4 top-12 flex flex-col bg-orange-300 dark:bg-gray-900 rounded-md">
           {tabs.map((tab) => (
-            <Link
+            <Button
               key={tab.path}
               href={tab.path}
+              variant="text"
+              size="md"
               className={classNames(
-                "hover:underline underline-offset-4 p-4",
-                pathname.includes(tab.path) && "bg-teal-500"
+                "rounded-none",
+                pathname.includes(tab.path) && "bg-primary-100",
               )}
             >
               {tab.label}
-            </Link>
+            </Button>
           ))}
         </nav>
       )}

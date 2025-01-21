@@ -76,9 +76,6 @@ const WorksPage = () => {
           />
         ))}
       </ul>
-      <Banner emoji="🤖">
-        <p>I need to work hard before AI takes my job.</p>
-      </Banner>
       <hr className="my-6 h-0.5 border-t-0 bg-neutral-800 dark:bg-neutral-100 opacity-100 dark:opacity-50" />
       <h2 className="text-xl my-4">Old Works</h2>
       <ul className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">

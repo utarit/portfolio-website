@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 
+import { Button } from "@/design-system/Button";
+
 interface Props {
   answer: RegExp;
   errorText?: string;
@@ -70,32 +72,30 @@ const PuzzleLock = ({
         />
       </label>
 
-      <button
-        className="bg-slate-700 rounded-sm py-1 px-2 hover:bg-slate-800 focus:bg-slate-900 text-white"
-        type="submit"
-      >
+      <Button size="sm" type="submit" color="primary">
         {buttonText}
-      </button>
+      </Button>
 
       {error && <p className="text-red-700 font-bold">{errorText}</p>}
-      <div className="flex gap-4 justify-end mt-2">
+      <div className="flex gap-4 justify-end mt-4">
         {hintText && (
-          <button
-            className="hover:underline text-cyan-700 active:text-cyan-600 dark:text-cyan-400 dark:active:text-cyan-300"
+          <Button
+            variant="contained"
+            color="primary"
             onClick={handleHintClick}
             type="button"
           >
             İpucu Al
-          </button>
+          </Button>
         )}
         {solutionText && (
-          <button
-            className="hover:underline text-purple-700 active:text-purple-600 dark:text-purple-400 dark:active:text-purple-300"
+          <Button
+            variant="text"
             onClick={handleSolutionClick}
             type="button"
           >
             Cevabı göster
-          </button>
+          </Button>
         )}
       </div>
     </form>
