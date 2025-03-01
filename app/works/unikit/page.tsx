@@ -15,11 +15,6 @@ const UnikitPage = () => {
       year="2019"
       pills={[
         {
-          label: "App Store",
-          value:
-            "https://play.google.com/store/apps/details?id=com.maks.metu_buddy",
-        },
-        {
           label: "GitHub",
           value: "https://github.com/utarit/metu_buddy",
         },

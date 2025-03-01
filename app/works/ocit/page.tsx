@@ -15,11 +15,6 @@ const OcitPage = () => {
       year="2018"
       pills={[
         {
-          label: "Store",
-          value:
-            "https://play.google.com/store/apps/details?id=com.maks.ocitfirstaid",
-        },
-        {
           label: "Web",
           value: "https://ocit-canki.netlify.app/",
         },

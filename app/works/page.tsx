@@ -10,6 +10,12 @@ export const metadata: Metadata = {
 
 const works = [
   {
+    title: "HeyJobs",
+    desc: "Find a better job with HeyJobs",
+    url: "/heyjobs",
+    thumbnail: "/images/heyjobs.svg",
+  },
+  {
     title: "Plentific",
     desc: "A simple work order management platform",
     url: "/plentific",
@@ -26,12 +32,6 @@ const works = [
     desc: "Huawei services for React Native and JavaScript based platform",
     url: "/huawei",
     thumbnail: "/images/hms-map.jpg",
-  },
-  {
-    title: "UniKit",
-    desc: "A handy app for METU students",
-    url: "/unikit",
-    thumbnail: "/images/unikit.png",
   },
 ];
 
@@ -55,10 +55,10 @@ const oldWorks = [
     thumbnail: "/images/ocit.png",
   },
   {
-    title: "OCİT Blog",
-    desc: "METU Lifesaving and First Aid Society Blog",
-    url: "/ocit-blog",
-    thumbnail: "/images/ocit-blog.png",
+    title: "UniKit",
+    desc: "A handy app for METU students",
+    url: "/unikit",
+    thumbnail: "/images/unikit.png",
   },
 ];
 const WorksPage = () => {
@@ -77,7 +77,7 @@ const WorksPage = () => {
         ))}
       </ul>
       <hr className="my-6 h-0.5 border-t-0 bg-neutral-800 dark:bg-neutral-100 opacity-100 dark:opacity-50" />
-      <h2 className="text-xl my-4">Old Works</h2>
+      <h2 className="text-xl my-4">Old Works (young and student times)</h2>
       <ul className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
         {oldWorks.map((el) => (
           <GridItem
