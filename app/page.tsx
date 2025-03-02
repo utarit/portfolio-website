@@ -10,7 +10,7 @@ import { Button } from "@/design-system/Button";
 export default function Home() {
   return (
     <MainLayout>
-      <article className="flex flex-col mb-8">
+      <article className="flex flex-col mb-8 gap-8">
         <section className="flex justify-between gap-4 items-start">
           <header>
             <h2 className="text-4xl">Mert Akça</h2>
@@ -35,19 +35,33 @@ export default function Home() {
             efficient, stylish, and accessible solutions to real-world
             challenges while making a positive impact through my work.
           </p>
-          <ul className="py-4 flex flex-col gap-2">
-            <li>☕ Coffee-fueled coder with a creative mindset</li>
-            <li>🎮 Puzzle game and escape room designer</li>
-            <li>
-              💡 Dedicated to crafting innovative, user-friendly solutions
-            </li>
-            <li>🌟 Driven by the desire to make a meaningful difference</li>
-          </ul>
-          <Button href="/works">
+          <Button className="mt-4" href="/works">
             My Works &gt;
           </Button>
         </section>
-        <section className="my-4">
+        <section>
+          <SectionHeading>What I do (TL;DR)</SectionHeading>
+          <ul className="py-4 flex flex-col gap-2 list-disc">
+            <li>
+              I am a full-time Software Engineer with a strong experience on
+              Front-end side of the stack. (Both mobile and web)
+            </li>
+            <li>
+              I create puzzle games and treasure hunts for events, companies and
+              organizations.
+            </li>
+            <li>
+              I review and redesign various resumes. I do it now from{"  "}
+              <Link
+                className="underline text-primary-500 hover:text-primary-400"
+                href="https://www.linkedin.com/services/page/94044132028a119877/"
+              >
+                Linkedin
+              </Link>
+            </li>
+          </ul>
+        </section>
+        <section>
           <SectionHeading>
             A Mystery Game: Zehra is Missing (in Turkish)
           </SectionHeading>
