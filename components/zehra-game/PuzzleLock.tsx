@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 
+import { useLanguage } from "@/contexts/LanguageContext";
 import { Button } from "@/design-system/Button";
 
 interface Props {
@@ -15,28 +16,29 @@ interface Props {
 
 const PuzzleLock = ({
   answer,
-  buttonText = "Aç",
+  buttonText,
   label,
   placeholder,
   onPuzzleSolve,
-  errorText = "Yanlış şifre",
+  errorText,
   hintText,
   solutionText,
 }: Props) => {
   const [error, setError] = useState(false);
+  const { t } = useLanguage();
 
   const handleChange = () => {
     setError(false);
   };
 
   const handleHintClick = () => {
-    if (confirm("İpucu almak istediğinize emin misiniz?") === true) {
+    if (confirm(t("messages.confirmHint")) === true) {
       alert(hintText);
     }
   };
 
   const handleSolutionClick = () => {
-    if (confirm("Cevabı öğrenmek istediğinize emin misiniz?") === true) {
+    if (confirm(t("messages.confirmSolution")) === true) {
       alert(solutionText);
     }
   };
@@ -73,10 +75,14 @@ const PuzzleLock = ({
       </label>
 
       <Button size="sm" type="submit" color="primary">
-        {buttonText}
+        {buttonText || t("buttons.open")}
       </Button>
 
-      {error && <p className="text-red-700 font-bold">{errorText}</p>}
+      {error && (
+        <p className="text-red-700 font-bold">
+          {errorText || t("messages.wrongPassword")}
+        </p>
+      )}
       <div className="flex gap-4 justify-end mt-4">
         {hintText && (
           <Button
@@ -85,7 +91,7 @@ const PuzzleLock = ({
             onClick={handleHintClick}
             type="button"
           >
-            İpucu Al
+            {t("buttons.getHint")}
           </Button>
         )}
         {solutionText && (
@@ -94,7 +100,7 @@ const PuzzleLock = ({
             onClick={handleSolutionClick}
             type="button"
           >
-            Cevabı göster
+            {t("buttons.showAnswer")}
           </Button>
         )}
       </div>

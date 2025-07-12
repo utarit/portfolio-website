@@ -3,22 +3,23 @@
 import React, { useState } from "react";
 import Image from "next/image";
 
+import { useLanguage } from "@/contexts/LanguageContext";
+
 import Dialog from "../Dialog";
 import PuzzleSection from "../helpers/PuzzleSection";
 import PuzzleLock from "../PuzzleLock";
 
 const MarketCameraReport = () => {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const { t } = useLanguage();
 
   return (
     <PuzzleSection className="row-start-2">
       <h2 className="text-xl ">
-        3. Mahmut&apos;un dükkanı önünde yaşanan kaza hakkında aldığımız
-        detaylar
+        {t("cameraReport.title")}
       </h2>
       <p className="my-4">
-        Ajanımız hastalık iznine çıkarken şifresini vermeyi unutmuş. Şifrelerini
-        gizlemeyi çok iyi bilir, belki panosu sana yardımcı olur.
+        {t("cameraReport.description")}
       </p>
 
       <Image
@@ -28,12 +29,12 @@ const MarketCameraReport = () => {
         alt="A cork board"
       />
       <PuzzleLock
-        label="Kamera görüntüleri"
-        placeholder="XXXXXXX"
+        label={t("cameraReport.label")}
+        placeholder={t("cameraReport.placeholder")}
         answer={/ala(c|ç|Ç)at(ı|i)/i}
         onPuzzleSolve={() => setIsDialogOpen(true)}
-        hintText="Gazete haberini dikkatli okudunuz mu? Orijinal haberden biraz farklı gibi..."
-        solutionText="Şifre: alaçatı"
+        hintText={t("cameraReport.hint")}
+        solutionText={t("cameraReport.solution")}
       />
       {isDialogOpen && (
         <Dialog onClose={() => setIsDialogOpen(false)}>

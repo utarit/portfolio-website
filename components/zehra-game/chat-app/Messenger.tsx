@@ -44,12 +44,10 @@ const Messenger = ({ person, messages }: MessengerProps) => {
                     "text-gray-700 text-xs": message.person === "system",
                   })}
                 >
-                  {message.message}{" "}
-                  {message.link && (
+                  {message.message} {message.link && (
                     <a
                       className="underline text-blue-700"
-                      target="_blank"
-                      href="https://forms.gle/Ujzzuef7ounMsEVE8"
+                      href={message.link.url}
                     >
                       {message.link.title}
                     </a>
@@ -58,7 +56,7 @@ const Messenger = ({ person, messages }: MessengerProps) => {
                 <span
                   className={classNames(
                     "text-xs",
-                    message.person === "me" ? "text-white" : "text-gray-600"
+                    message.person === "me" ? "text-white" : "text-gray-600",
                   )}
                 >
                   {message.time}

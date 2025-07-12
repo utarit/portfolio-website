@@ -3,28 +3,31 @@
 import { useState } from "react";
 import Image from "next/image";
 
+import { useLanguage } from "@/contexts/LanguageContext";
+
 import Dialog from "../Dialog";
 import PuzzleSection from "../helpers/PuzzleSection";
 import PuzzleLock from "../PuzzleLock";
 
 const ChestPuzzle = () => {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const { t } = useLanguage();
 
   return (
     <PuzzleSection>
       <h2 className="text-xl ">
-        1. Zehra&apos;nın odasında bulunan bir sandık
+        {t("chestPuzzle.title")}
       </h2>
       <p className="my-4">
-        Uzmanlarımız şifrenin, Zehra&apos;nın sevdiği bir şey olduğnu düşünüyor.
+        {t("chestPuzzle.description")}
       </p>
       <PuzzleLock
-        label="Sandık şifresi"
-        placeholder="XXXXXXXXX"
-        answer={/k(u|ü|Ü)lked(ı|i|İ)s(ı|i|İ)/i}
+        label={t("chestPuzzle.label")}
+        placeholder={t("chestPuzzle.placeholder")}
+        answer={/k(u|ü|Ü)lked(ı|i|İ)s(ı|i|İ)|cinderella/i}
         onPuzzleSolve={() => setIsDialogOpen(true)}
-        hintText="Teyzesinin ifadesini dikkatli okuyun"
-        solutionText="Şifre: külkedisi"
+        hintText={t("chestPuzzle.hint")}
+        solutionText={t("chestPuzzle.solution")}
       />
       {isDialogOpen && (
         <Dialog onClose={() => setIsDialogOpen(false)}>

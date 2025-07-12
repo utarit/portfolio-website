@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import classNames from "classnames";
 
 import Messenger, { Message } from "@/components/zehra-game/chat-app/Messenger";
-import { Decision, ResultType, Suspect } from "@/data/zehraFinalChat";
+import { Decision, Suspect } from "@/data/zehraFinalChat";
 import { Button } from "@/design-system/Button";
 
 export interface Contact {

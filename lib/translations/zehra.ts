@@ -1,0 +1,309 @@
+export const translations = {
+  en: {
+    // Page metadata
+    title:
+      "Zehra is Missing · Detective Experience · Interactive Crime Solving Game",
+    description:
+      "Solve thrilling crime puzzles, test your detective skills. Perfect for family fun and strategic gameplay!",
+    keywords:
+      "crime solving game, detective game, board game, mystery, adventure, puzzle, family game, strategic game, English",
+
+    // Navigation and main page
+    gameTitle: "Zehra is Missing",
+    gamePdf: "Game PDF",
+    pdfLink:
+      "https://drive.google.com/file/d/1qDAfTbOG2GPaKuApeoZXDliYwtcmvOvM/view?usp=sharing",
+    gameDescription: "A Mystery Game: Zehra is Missing",
+
+    // Main sections
+    chestPuzzle: {
+      title: "1. A chest found in Zehra's room",
+      description: "Our experts think the password is something Zehra loved.",
+      label: "Chest password",
+      placeholder: "XXXXXXXXX",
+      hint: "Read the aunt's statement carefully",
+      solution: "Password: cinderella",
+    },
+
+    hiddenMessages: {
+      title: "2. Phone records",
+      description:
+        "Our agents managed to capture data from some people's phone messages. To access them, you need to find the password for each messaging app.",
+      phoneLabels: {
+        zehra: "Zehra's phone",
+        mahmut: "Mahmut's phone",
+        semra: "Semra's phone",
+        kerim: "Kerim's phone",
+        riza: "Riza's phone",
+      },
+      cantFindPasswords: "Can't find the phone passwords?",
+      hints: [
+        {
+          name: "Zehra",
+          help: "Were you able to open Zehra's chest?",
+          solution: "Password: 1397",
+        },
+        {
+          name: "Mahmut",
+          help: "Mahmut seems to be a passionate Fenerbahçe fan.",
+          solution: "Password: 1907",
+        },
+        {
+          name: "Kerim",
+          help: "What year did Kerim and Zehra meet?",
+          solution: "Password: 2001",
+        },
+        {
+          name: "Semra",
+          help:
+            "Have you looked at the books Semra reads? She seems to enjoy reading George Orwell",
+          solution: "Password: 1984",
+        },
+        {
+          name: "Riza",
+          help:
+            "Riza seems obsessed with Count Dracula. Could the password be related to him?",
+          solution: "Password: 1431",
+        },
+      ],
+    },
+
+    cameraReport: {
+      title:
+        "3. Details we received about the accident in front of Mahmut's shop",
+      description:
+        "Our agent forgot to give his password when he went on sick leave. He's very good at hiding his passwords, maybe his board can help you.",
+      label: "Camera footage",
+      placeholder: "XXXXXXX",
+      hint:
+        "Did you read the newspaper article carefully? It seems a bit different from the original...",
+      solution: "Password: alacati",
+    },
+
+    finalChat: {
+      title: "I'm ready to make an accusation",
+      confirmDialog:
+        "Are you sure you want to continue? You will reach the finale of the story and learn the result.",
+      systemMessage: "Person is offline...",
+    },
+
+    finalDecision: {
+      title: "Final Decision",
+      submitSuccess: "Your answers have been submitted successfully!",
+      submit: "Submit",
+      questions: {
+        initialConclusion:
+          "What conclusion did you reach first as a result of your research?",
+        responsible: "Who is responsible for Zehra's disappearance?",
+        carAccident: "Who caused the car accident?",
+        hospitalReason: "Why did Zehra go to the hospital?",
+        finalAction: "What will you do after the last conversation?",
+      },
+      options: {
+        killed: "Zehra was killed",
+        kidnapped: "Zehra was kidnapped",
+        suicide: "Zehra committed suicide",
+        escapedAlone: "Zehra escaped alone",
+        none: "No one, she did it on her own",
+        other: "None of them, someone else",
+        bloodSugar: "Low blood sugar",
+        kidneyFailure: "Kidney failure",
+        panic: "Panic attack",
+        miscarriage: "Miscarriage",
+        cancer: "Cancer",
+        allergy: "Allergy",
+        sprain: "Sprain",
+        asthma: "Asthma attack",
+        unknown: "Unknown reason",
+        didntGo: "Actually didn't go to hospital",
+        keepSecret:
+          "Keep Zehra's escape to yourself. Mahmut will continue to stay in prison, Zehra will continue to live in hiding.",
+        goToPolice:
+          "Go to the police with the last evidence in your hand. Nedim and Semra will be arrested for misleading the police, Mahmut will be released.",
+      },
+    },
+
+    // Common UI elements
+    buttons: {
+      open: "Open",
+      getHint: "Get Hint",
+      showAnswer: "Show Answer",
+      close: "Close",
+    },
+
+    messages: {
+      wrongPassword: "Wrong password",
+      confirmHint: "Are you sure you want to get a hint?",
+      confirmSolution: "Are you sure you want to learn the answer?",
+    },
+
+    // Lock screen texts
+    lockTexts: {
+      kerim: "When I first saw her <3",
+      riza: "M'lord",
+    },
+
+    // Language toggle
+    language: {
+      english: "English",
+      turkish: "Türkçe",
+      switchTo: "Switch to",
+    },
+  },
+
+  tr: {
+    // Page metadata
+    title:
+      "Zehra Kayıp · Dedektiflik Deneyimi · Senaryo Tabanlı Sürükleyici Oyunlar",
+    description:
+      "Gerilim dolu suç çözme oyunuyla sırları çözün, dedektif yeteneklerinizi sınayın. Aile eğlencesi ve stratejik oyun için mükemmel bir deneyim!",
+    keywords:
+      "suç çözme oyunu, dedektif oyunu, masa oyunu, gizem, macera, bulmaca, aile oyunu, stratejik oyun, masa oyunu, Türkçe",
+
+    // Navigation and main page
+    gameTitle: "Zehra Kayıp",
+    gamePdf: "Oyun PDF",
+    pdfLink:
+      "https://drive.google.com/file/d/1x8z_Dp7p00lUCjdZmos6Uee6eWMWpjPX/view?usp=drive_link",
+    gameDescription: "Bir Gizem Oyunu: Zehra Kayıp",
+
+    // Main sections
+    chestPuzzle: {
+      title: "1. Zehra'nın odasında bulunan bir sandık",
+      description:
+        "Uzmanlarımız şifrenin, Zehra'nın sevdiği bir şey olduğnu düşünüyor.",
+      label: "Sandık şifresi",
+      placeholder: "XXXXXXXXX",
+      hint: "Teyzesinin ifadesini dikkatli okuyun",
+      solution: "Şifre: külkedisi",
+    },
+
+    hiddenMessages: {
+      title: "2. Telefon kayıtları",
+      description:
+        "Ajanlarımız bazı kişilerin telefonlarındaki mesajların datasını yakalamayı başardı. Onlara ulaşabilmek için mesaj uygulamasının şifresini bulman gerekiyor.",
+      phoneLabels: {
+        zehra: "Zehra'nın telefonu",
+        mahmut: "Mahmut'un telefonu",
+        semra: "Semra'nın telefonu",
+        kerim: "Kerim'in telefonu",
+        riza: "Rıza'nın telefonu",
+      },
+      cantFindPasswords: "Telefon şifrelerini bulamadınız mı?",
+      hints: [
+        {
+          name: "Zehra",
+          help: "Zehra'nın sandığını açabildin mi?",
+          solution: "Şifre: 1397",
+        },
+        {
+          name: "Mahmut",
+          help: "Mahmut sıkı bir Fenerbahçe hayranı gibi duruyor.",
+          solution: "Şifre: 1907",
+        },
+        {
+          name: "Kerim",
+          help: "Kerim ile Zehra hangi yılda tanıştılar?",
+          solution: "Şifre: 2001",
+        },
+        {
+          name: "Semra",
+          help:
+            "Semra'nın okuduğu kitaplara bakabildin mi? George Orwell okumayı seviyor gibi",
+          solution: "Şifre: 1984",
+        },
+        {
+          name: "Riza",
+          help:
+            "Rıza, Kont Dracula'ya kafayı takmış gibi. Şifre onunla ilgili bir şey olabilir mi?",
+          solution: "Şifre: 1431",
+        },
+      ],
+    },
+
+    cameraReport: {
+      title:
+        "3. Mahmut'un dükkanı önünde yaşanan kaza hakkında aldığımız detaylar",
+      description:
+        "Ajanımız hastalık iznine çıkarken şifresini vermeyi unutmuş. Şifrelerini gizlemeyi çok iyi bilir, belki panosu sana yardımcı olur.",
+      label: "Kamera görüntüleri",
+      placeholder: "XXXXXXX",
+      hint:
+        "Gazete haberini dikkatli okudunuz mu? Orijinal haberden biraz farklı gibi...",
+      solution: "Şifre: alaçatı",
+    },
+
+    finalChat: {
+      title: "Suçlama yapmaya hazırım",
+      confirmDialog:
+        "Devam etmek istediğinize emin misiniz? Hikayenin finaline gelecek ve sonucu öğreneceksiniz.",
+      systemMessage: "Kişi çevirimdışı...",
+    },
+
+    finalDecision: {
+      title: "Son Karar",
+      submitSuccess: "Cevaplarınız başarıyla gönderildi!",
+      submit: "Gönder",
+      questions: {
+        initialConclusion:
+          "Araştırmalarınız sonucu ilk hangi sonuca ulaşmıştınız?",
+        responsible: "Zehra'nın kaybolmasından kim/kimler sorumlu?",
+        carAccident: "Araba kazasını kim yaptı?",
+        hospitalReason: "Zehra neden hastaneye gitti?",
+        finalAction: "Son konuşmadan sonra ne yapacaksın?",
+      },
+      options: {
+        killed: "Zehra öldürüldü",
+        kidnapped: "Zehra kaçırıldı",
+        suicide: "Zehra intihar etti",
+        escapedAlone: "Zehra tek başına kaçtı",
+        none: "Hiçkimse, kendi başına yaptı",
+        other: "Hiçbiri, başka biri",
+        bloodSugar: "Şekeri düşmesi",
+        kidneyFailure: "Böbrek yetmezliği",
+        panic: "Panik atak",
+        miscarriage: "Düşük",
+        cancer: "Kanser",
+        allergy: "Alerji",
+        sprain: "Burkulma",
+        asthma: "Astım krizi",
+        unknown: "Nedeni bilinmiyor",
+        didntGo: "Aslında hastaneye gitmedi",
+        keepSecret:
+          "Zehra'nın kaçtığını kendine sakla. Mahmut hapiste kalmaya devam edecek, Zehra kayıplarda yaşamaya devam edecek.",
+        goToPolice:
+          "Elindeki son kanıtlarla polise git. Nedim ve Semra polisi yanlış yönlendirmeden tutuklanacak, Mahmut serbest kalacak.",
+      },
+    },
+
+    // Common UI elements
+    buttons: {
+      open: "Aç",
+      getHint: "İpucu Al",
+      showAnswer: "Cevabı göster",
+      close: "Kapat",
+    },
+
+    messages: {
+      wrongPassword: "Yanlış şifre",
+      confirmHint: "İpucu almak istediğinize emin misiniz?",
+      confirmSolution: "Cevabı öğrenmek istediğinize emin misiniz?",
+    },
+
+    // Lock screen texts
+    lockTexts: {
+      kerim: "Onu ilk gördüğüm zaman <3",
+      riza: "M'lord",
+    },
+
+    // Language toggle
+    language: {
+      english: "English",
+      turkish: "Türkçe",
+      switchTo: "Geç",
+    },
+  },
+} as const;
+
+export type TranslationKey = keyof typeof translations.en;
+export type Language = keyof typeof translations;
