@@ -104,7 +104,7 @@ export const translations = {
         kidnapped: "Zehra was kidnapped",
         suicide: "Zehra committed suicide",
         escapedAlone: "Zehra escaped alone",
-        none: "No one, she did it on her own",
+        none: "No one/she did it on her own",
         other: "None of them, someone else",
         bloodSugar: "Low blood sugar",
         kidneyFailure: "Kidney failure",
@@ -120,6 +120,16 @@ export const translations = {
           "Keep Zehra's escape to yourself. Mahmut will continue to stay in prison, Zehra will continue to live in hiding.",
         goToPolice:
           "Go to the police with the last evidence in your hand. Nedim and Semra will be arrested for misleading the police, Mahmut will be released.",
+      },
+      results: {
+        title: "Survey Results",
+        totalResponses: "Total responses:",
+        yourAnswers: "Your Answers",
+        retake: "Retake Survey",
+      },
+      loading: "Loading...",
+      validation: {
+        required: "Please fill in all required fields.",
       },
     },
 
@@ -257,7 +267,7 @@ export const translations = {
         kidnapped: "Zehra kaçırıldı",
         suicide: "Zehra intihar etti",
         escapedAlone: "Zehra tek başına kaçtı",
-        none: "Hiçkimse, kendi başına yaptı",
+        none: "Hiçkimse/Kendi başına yaptı",
         other: "Hiçbiri, başka biri",
         bloodSugar: "Şekeri düşmesi",
         kidneyFailure: "Böbrek yetmezliği",
@@ -273,6 +283,16 @@ export const translations = {
           "Zehra'nın kaçtığını kendine sakla. Mahmut hapiste kalmaya devam edecek, Zehra kayıplarda yaşamaya devam edecek.",
         goToPolice:
           "Elindeki son kanıtlarla polise git. Nedim ve Semra polisi yanlış yönlendirmeden tutuklanacak, Mahmut serbest kalacak.",
+      },
+      results: {
+        title: "Anket Sonuçları",
+        totalResponses: "Toplam yanıt:",
+        yourAnswers: "Verdiğiniz Cevaplar",
+        retake: "Anketi Yeniden Çöz",
+      },
+      loading: "Yükleniyor...",
+      validation: {
+        required: "Lütfen tüm gerekli alanları doldurun.",
       },
     },
 

@@ -82,7 +82,7 @@ const FinalChat = () => {
             setContacts(emptyContacts);
           }}
         >
-          <div className="flex flex-col gap-4 p-4 h-full md:h-[600px] overflow-scroll">
+          <div className="flex flex-col gap-4 p-4 h-full md:h-[600px] overflow-auto">
             <div className="flex-1">
               <ChatApp
                 owner="Dedektif"
