@@ -1,7 +1,6 @@
 import React from "react";
 import { Metadata } from "next";
 
-import Banner from "@/components/Banner";
 import GridItem from "@/components/works/GridItem";
 
 export const metadata: Metadata = {

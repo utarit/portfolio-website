@@ -26,7 +26,7 @@ const SecretHuntersPage = () => {
           value: "Creativity, Music, Google Docs, Next.js, Tailwind CSS",
         },
       ]}
-      images={["/images/cork-board.png"]}
+      images={["/zehra/cork-board-en.png"]}
     >
       Proudly, I am the founder of the game &apos;Zehra is missing&apos; which
       is a mystery solving game series with both printed and interactive

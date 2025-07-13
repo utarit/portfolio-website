@@ -1,92 +1,95 @@
 "use client";
-import {
-  kerimContacts,
-  mahmutContacts,
-  rizaContacts,
-  semraContacts,
-  zehraContacts,
-} from "@/data/zehraMessages";
+import { useMessages } from "@/components/zehra-game/lib/useMessages";
+import { useLanguage } from "@/contexts/LanguageContext";
 import { Button } from "@/design-system/Button";
 
 import ChatApp from "../chat-app/ChatApp";
 import PuzzleSection from "../helpers/PuzzleSection";
 import LockedPhone from "../LockedPhone";
 
-const hints = [
-  {
-    name: "Zehra",
-    help: "Zehra'nın sandığını açabildin mi?",
-    solution: "Şifre: 1397",
-  },
-  {
-    name: "Mahmut",
-    help: "Mahmut sıkı bir Fenerbahçe hayranı gibi duruyor.",
-    solution: "Şifre: 1907",
-  },
-  {
-    name: "Kerim",
-    help: "Kerim ile Zehra hangi yılda tanıştılar?",
-    solution: "Şifre: 2001",
-  },
-  {
-    name: "Semra",
-    help:
-      "Semra'nın okuduğu kitaplara bakabildin mi? Georde Orwell okumayı seviyor gibi",
-    solution: "Şifre: 1984",
-  },
-  {
-    name: "Rıza",
-    help:
-      "Rıza, Kont Dracula'ya kafayı takmış gibi. Şifre onunla ilgili bir şey olabilir mi?",
-    solution: "Şifre: 1431",
-  },
-];
-
 const HiddenMessages = () => {
+  const { t } = useLanguage();
+  const {
+    getZehraContacts,
+    getMahmutContacts,
+    getSemraContacts,
+    getKerimContacts,
+    getRizaContacts,
+  } = useMessages();
+
+  const hints = [
+    {
+      name: "Zehra",
+      help: t("hiddenMessages.hints.0.help"),
+      solution: t("hiddenMessages.hints.0.solution"),
+    },
+    {
+      name: "Mahmut",
+      help: t("hiddenMessages.hints.1.help"),
+      solution: t("hiddenMessages.hints.1.solution"),
+    },
+    {
+      name: "Kerim",
+      help: t("hiddenMessages.hints.2.help"),
+      solution: t("hiddenMessages.hints.2.solution"),
+    },
+    {
+      name: "Semra",
+      help: t("hiddenMessages.hints.3.help"),
+      solution: t("hiddenMessages.hints.3.solution"),
+    },
+    {
+      name: "Riza",
+      help: t("hiddenMessages.hints.4.help"),
+      solution: t("hiddenMessages.hints.4.solution"),
+    },
+  ];
+
   return (
     <PuzzleSection className="row-span-2">
-      <h2 className="text-xl ">2. Telefon kayıtları</h2>
+      <h2 className="text-xl ">{t("hiddenMessages.title")}</h2>
       <p className="my-4">
-        Ajanlarımız bazı kişilerin telefonlarındaki mesajların datasını
-        yakalamayı başardı. Onlara ulaşabilmek için mesaj uygulamasının
-        şifresini bulman gerekiyor.
+        {t("hiddenMessages.description")}
       </p>
 
       <div className="flex flex-wrap justify-center gap-4 py-4">
-        <LockedPhone text="Zehra'nın telefonu" password="1397">
-          <ChatApp owner="Zehra" contacts={zehraContacts} />
+        <LockedPhone
+          text={t("hiddenMessages.phoneLabels.zehra")}
+          password="1397"
+        >
+          <ChatApp owner="Zehra" contacts={getZehraContacts()} />
         </LockedPhone>
         <LockedPhone
-          text="Mahmut'un telefonu"
+          text={t("hiddenMessages.phoneLabels.mahmut")}
           password="1907"
           lockBackground="/zehra/fenerbahce.jpeg"
         >
-          <ChatApp owner="Mahmut" contacts={mahmutContacts} />
+          <ChatApp owner="Mahmut" contacts={getMahmutContacts()} />
         </LockedPhone>
         <LockedPhone
-          text="Semra'nın telefonu"
+          text={t("hiddenMessages.phoneLabels.semra")}
           password="1984"
           lockBackground="/zehra/eye.jpg"
         >
-          <ChatApp owner="Semra" contacts={semraContacts} />
+          <ChatApp owner="Semra" contacts={getSemraContacts()} />
         </LockedPhone>
         <LockedPhone
-          text="Kerim'in telefonu"
+          text={t("hiddenMessages.phoneLabels.kerim")}
           password="2001"
-          lockText="Onu ilk gördüğüm zaman <3"
+          lockText={t("lockTexts.kerim")}
         >
-          <ChatApp owner="Kerim" contacts={kerimContacts} />
+          <ChatApp owner="Kerim" contacts={getKerimContacts()} />
         </LockedPhone>
         <LockedPhone
-          text="Rıza'nın telefonu"
+          text={t("hiddenMessages.phoneLabels.riza")}
           password="1431"
-          lockText="M'lord"
+          lockText={t("lockTexts.riza")}
           lockBackground="/zehra/skull.jpg"
         >
-          <ChatApp owner="Rıza" contacts={rizaContacts} />
+          <ChatApp owner="Rıza" contacts={getRizaContacts()} />
         </LockedPhone>
       </div>
-      <h6 className="text-lg">Telefon şifrelerini bulamadınız mı?</h6>
+      <h6 className="text-lg">{t("hiddenMessages.cantFindPasswords")}</h6>
       <ul>
         {hints.map((hint) => (
           <li
@@ -100,14 +103,14 @@ const HiddenMessages = () => {
                 type="button"
                 onClick={() => alert(hint.help)}
               >
-                İpucu Al
+                {t("buttons.getHint")}
               </Button>
               <Button
                 variant="text"
                 type="button"
                 onClick={() => alert(hint.solution)}
               >
-                Cevabı göster
+                {t("buttons.showAnswer")}
               </Button>
             </div>
           </li>

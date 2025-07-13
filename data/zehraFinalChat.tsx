@@ -1,5 +1,7 @@
 import { Message } from "@/components/zehra-game/chat-app/Messenger";
 
+import { getFinalAnswerEn, getFinalSentencesEn } from "./zehraFinalChatEn";
+
 export enum ResultType {
   KILLED = "killed",
   KIDNAPPED = "kidnapped",
@@ -25,7 +27,14 @@ export type Decision = {
   message: string;
 };
 
-export const getFinalSentences = (person: Suspect): Decision[] => {
+export const getFinalSentences = (
+  person: Suspect,
+  language: string = "tr",
+): Decision[] => {
+  if (language === "en") {
+    return getFinalSentencesEn(person);
+  }
+
   if (person === Suspect.ZEHRA) {
     return [
       {
@@ -55,8 +64,12 @@ export const getFinalSentences = (person: Suspect): Decision[] => {
 
 export const getFinalAnswer = (
   person: Suspect,
-  finalDesision: Decision
+  finalDesision: Decision,
+  language: string = "tr",
 ): Message[] => {
+  if (language === "en") {
+    return getFinalAnswerEn(person, finalDesision);
+  }
   const getMessageTime = (minutes: number = 0) => {
     const date = new Date();
     date.setTime(date.getTime() + minutes * 60000); // Add minutes in milliseconds (1 minute = 60,000 milliseconds)
@@ -266,7 +279,7 @@ export const getFinalAnswer = (
           '"İyi iş dedektif. Davayı çözmeyi başardın. Şimdi son karar senin elinde. Aşağıdaki linke tıkla ve seçimini yap. Sonrasında diğer dedektiflerin ne karar verdiğini de öğren."',
         link: {
           title: "Son kararını vermek için tıkla.",
-          url: "https://forms.gle/Ujzzuef7ounMsEVE8",
+          url: "/zehra/final-decision/tr",
         },
       },
     ]);

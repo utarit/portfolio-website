@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import Banner from "@/components/Banner";
 import SectionHeading from "@/components/headings/SectionHeading";
 import { MainLayout } from "@/components/layout/main-layout";
 import SocialButton from "@/components/SocialButton";
@@ -22,7 +21,7 @@ export default function Home() {
           <Image
             className="rounded-full border-2 border-opacity-80 border-white"
             src="/images/me.jpeg"
-            alt="A photo of Mert Akca"
+            alt="A photo of me"
             width={100}
             height={100}
           />

@@ -65,12 +65,16 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={classNames(documentFont.variable, headingFont.variable)}
+      className={classNames(
+        documentFont.variable,
+        headingFont.variable,
+        "h-full",
+      )}
     >
       <head>
         <Script src="/theme.js" />
       </head>
-      <body className="bg-background-50 text-text-primary">
+      <body className="bg-background-50 text-text-primary h-full">
         {children}
         <Analytics />
         <SpeedInsights />

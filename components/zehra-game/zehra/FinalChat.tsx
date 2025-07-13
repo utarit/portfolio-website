@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 
+import { useLanguage } from "@/contexts/LanguageContext";
 import {
   Decision,
   getFinalAnswer,
@@ -9,6 +10,7 @@ import {
   Suspect,
 } from "@/data/zehraFinalChat";
 import { Button } from "@/design-system/Button";
+import { useTranslatedDecisions } from "@/lib/translations/zehraChat";
 
 import ChatApp, { Contact } from "../chat-app/ChatApp";
 import Dialog from "../Dialog";
@@ -17,25 +19,30 @@ const emptyContacts = Object.values(Suspect).map((suspect) => ({
   name: suspect,
   messages: [],
 }));
+
 const FinalChat = () => {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [contacts, setContacts] = useState<Contact[]>(emptyContacts);
-
   const [messagingInProgress, setMessagingInProgress] = useState(false);
+  const { t, language } = useLanguage();
+  const { getTranslatedDecision } = useTranslatedDecisions();
 
   const handleOpenDialog = () => {
-    if (
-      confirm(
-        "Devam etmek istediğinize emin misiniz? Hikayenin finaline gelecek ve sonucu öğreneceksiniz.",
-      ) === true
-    ) {
+    if (confirm(t("finalChat.confirmDialog")) === true) {
       setIsDialogOpen(true);
     }
   };
 
+  const getTranslatedDecisions = (person: Suspect): Decision[] => {
+    return getFinalSentences(person, language).map((sentence) => ({
+      ...sentence,
+      message: getTranslatedDecision(person, sentence.type),
+    }));
+  };
+
   const handleSelectOption = (person: Suspect, type: Decision) => {
     setMessagingInProgress(true);
-    const messages = getFinalAnswer(person, type);
+    const messages = getFinalAnswer(person, type, language);
 
     const putMessage = (index: number) => {
       setContacts((prev) => {
@@ -58,14 +65,14 @@ const FinalChat = () => {
   };
 
   return (
-    <section className="m-4">
+    <section className="mb-8">
       <Button
         fullWidth
-        color="primary"
+        color="error"
         onClick={handleOpenDialog}
         type="button"
       >
-        Suçlama yapmaya hazırım
+        {t("finalChat.title")}
       </Button>
       {isDialogOpen && (
         <Dialog
@@ -75,12 +82,16 @@ const FinalChat = () => {
             setContacts(emptyContacts);
           }}
         >
-          <ChatApp
-            owner="Dedektif"
-            contacts={contacts}
-            chatOptions={getFinalSentences}
-            onOptionClick={handleSelectOption}
-          />
+          <div className="flex flex-col gap-4 p-4 h-full md:h-[600px] overflow-auto">
+            <div className="flex-1">
+              <ChatApp
+                owner="Dedektif"
+                contacts={contacts}
+                chatOptions={getTranslatedDecisions}
+                onOptionClick={handleSelectOption}
+              />
+            </div>
+          </div>
         </Dialog>
       )}
     </section>

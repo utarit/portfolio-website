@@ -16,7 +16,7 @@ export interface MessengerProps {
 const Messenger = ({ person, messages }: MessengerProps) => {
   return (
     <div className="w-full mt-4 sm:min-w-[600px] mb-16 md:mb-3">
-      <div className="bg-green-100 rounded-lg shadow-md flex-grow overflow-y-auto h-[500px]">
+      <div className="bg-green-100 rounded-lg shadow-md flex-grow overflow-y-auto h-[400px]">
         <h2 className="bg-green-100 text-xl font-bold p-4 mx-2 mb-4 sticky top-0 border-b-2 border-b-black ">
           {person}
         </h2>
@@ -44,12 +44,10 @@ const Messenger = ({ person, messages }: MessengerProps) => {
                     "text-gray-700 text-xs": message.person === "system",
                   })}
                 >
-                  {message.message}{" "}
-                  {message.link && (
+                  {message.message} {message.link && (
                     <a
                       className="underline text-blue-700"
-                      target="_blank"
-                      href="https://forms.gle/Ujzzuef7ounMsEVE8"
+                      href={message.link.url}
                     >
                       {message.link.title}
                     </a>
@@ -58,7 +56,7 @@ const Messenger = ({ person, messages }: MessengerProps) => {
                 <span
                   className={classNames(
                     "text-xs",
-                    message.person === "me" ? "text-white" : "text-gray-600"
+                    message.person === "me" ? "text-white" : "text-gray-600",
                   )}
                 >
                   {message.time}
