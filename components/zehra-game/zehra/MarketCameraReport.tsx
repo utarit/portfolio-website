@@ -11,7 +11,15 @@ import PuzzleLock from "../PuzzleLock";
 
 const MarketCameraReport = () => {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
+
+  const boardPuzzleImage = language === "tr"
+    ? "/zehra/cork-board-tr.png"
+    : "/zehra/cork-board-en.png";
+
+  const mailImage = language === "tr"
+    ? "/zehra/mail-tr.png"
+    : "/zehra/mail-en.png";
 
   return (
     <PuzzleSection className="row-start-2">
@@ -23,7 +31,7 @@ const MarketCameraReport = () => {
       </p>
 
       <Image
-        src="/zehra/board-puzzle.png"
+        src={boardPuzzleImage}
         width={800}
         height={800}
         alt="A cork board"
@@ -40,17 +48,12 @@ const MarketCameraReport = () => {
         <Dialog onClose={() => setIsDialogOpen(false)}>
           <div className="flex flex-col gap-4 p-4 h-full md:h-[600px] overflow-auto">
             <Image
-              src="/zehra/mail.jpeg"
+              src={mailImage}
               width={800}
               height={400}
               alt="Mail from agents"
             />
-            <Image
-              src="/zehra/mail2.jpeg"
-              width={800}
-              height={400}
-              alt="Mail from agents"
-            />
+
             <Image
               src="/zehra/hoodie.jpeg"
               width={500}

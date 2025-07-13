@@ -10,7 +10,7 @@ export const translations = {
 
     // Navigation and main page
     gameTitle: "Zehra is Missing",
-    gamePdf: "Game PDF",
+    gamePdf: "Game PDF (EN)",
     pdfLink:
       "https://drive.google.com/file/d/1qDAfTbOG2GPaKuApeoZXDliYwtcmvOvM/view?usp=sharing",
     gameDescription: "A Mystery Game: Zehra is Missing",
@@ -173,7 +173,7 @@ export const translations = {
 
     // Navigation and main page
     gameTitle: "Zehra Kayıp",
-    gamePdf: "Oyun PDF",
+    gamePdf: "Oyun PDF (TR)",
     pdfLink:
       "https://drive.google.com/file/d/1x8z_Dp7p00lUCjdZmos6Uee6eWMWpjPX/view?usp=drive_link",
     gameDescription: "Bir Gizem Oyunu: Zehra Kayıp",
