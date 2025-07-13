@@ -62,7 +62,7 @@ export default function Home() {
         </section>
         <section>
           <SectionHeading>
-            A Mystery Game: Zehra is Missing (in Turkish)
+            A Mystery Game: Zehra is Missing (now also in English!)
           </SectionHeading>
           <Image
             height="400"
