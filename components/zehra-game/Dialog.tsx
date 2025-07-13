@@ -66,6 +66,8 @@ const Dialog = ({ children, disabledCloseButton, onClose }: Props) => {
               onClick={onClose}
               variant="contained"
               color="error"
+              aria-label="Close dialog"
+              className="pl-2 pr-2"
             >
               <CloseIcon />
             </Button>
