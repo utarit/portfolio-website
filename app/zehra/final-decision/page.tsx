@@ -66,6 +66,18 @@ const MOCK_RESULTS: ResultsData = {
   },
 };
 
+const NAMES = [
+  { value: "mahmut", label: "Mahmut" },
+  { value: "kerim", label: "Kerim" },
+  { value: "nuray", label: "Nuray" },
+  { value: "fatma", label: "Fatma" },
+  { value: "riza", label: "Rıza" },
+  { value: "sinan", label: "Sinan" },
+  { value: "yeliz", label: "Yeliz" },
+  { value: "semra", label: "Semra" },
+  { value: "nedim", label: "Nedim" },
+];
+
 const FinalDecisionPage = () => {
   const { t } = useLanguage();
   const [formData, setFormData] = useState<FormData>({
@@ -216,14 +228,14 @@ const FinalDecisionPage = () => {
           <h2 className="text-2xl font-bold mb-4">
             {t("finalDecision.results.title")}
           </h2>
-          <p className="text-gray-600 mb-6">
+          <p className="mb-6">
             {t("finalDecision.results.totalResponses")}{" "}
             {resultsData.totalResponses}
           </p>
         </div>
 
         {/* Your Answers */}
-        <div className="bg-blue-50 p-6 rounded-lg">
+        <div className="bg-blue-50 dark:bg-gray-800 p-6 rounded-lg">
           <h3 className="text-lg font-semibold mb-4">
             {t("finalDecision.results.yourAnswers")}
           </h3>
@@ -264,7 +276,7 @@ const FinalDecisionPage = () => {
         {/* Results Charts */}
         <div className="grid gap-6 md:grid-cols-2">
           {/* Initial Conclusion Results */}
-          <div className="bg-white p-6 rounded-lg border">
+          <div className="bg-white dark:bg-gray-800 p-6 rounded-lg border">
             <h4 className="font-semibold mb-4">
               {t("finalDecision.questions.initialConclusion")}
             </h4>
@@ -286,7 +298,7 @@ const FinalDecisionPage = () => {
           </div>
 
           {/* Responsible Person Results */}
-          <div className="bg-white p-6 rounded-lg border">
+          <div className="bg-white dark:bg-gray-800 p-6 rounded-lg border">
             <h4 className="font-semibold mb-4">
               {t("finalDecision.questions.responsible")}
             </h4>
@@ -298,7 +310,7 @@ const FinalDecisionPage = () => {
                     key={key}
                     label={key === "none"
                       ? t("finalDecision.options.none")
-                      : key}
+                      : NAMES.find((n) => n.value === key)?.label || key}
                     percentage={getPercentage(
                       value,
                       resultsData.totalResponses,
@@ -310,7 +322,7 @@ const FinalDecisionPage = () => {
           </div>
 
           {/* Hospital Reason Results */}
-          <div className="bg-white p-6 rounded-lg border">
+          <div className="bg-white dark:bg-gray-800 p-6 rounded-lg border">
             <h4 className="font-semibold mb-4">
               {t("finalDecision.questions.hospitalReason")}
             </h4>
@@ -332,7 +344,7 @@ const FinalDecisionPage = () => {
           </div>
 
           {/* Car Accident Results */}
-          <div className="bg-white p-6 rounded-lg border">
+          <div className="bg-white dark:bg-gray-800 p-6 rounded-lg border">
             <h4 className="font-semibold mb-4">
               {t("finalDecision.questions.carAccident")}
             </h4>
@@ -344,7 +356,7 @@ const FinalDecisionPage = () => {
                   key={key}
                   label={key === "other"
                     ? t("finalDecision.options.other")
-                    : key}
+                    : NAMES.find((n) => n.value === key)?.label || key}
                   percentage={getPercentage(
                     value,
                     resultsData.totalResponses,
@@ -356,7 +368,7 @@ const FinalDecisionPage = () => {
           </div>
 
           {/* Final Action Results */}
-          <div className="bg-white p-6 rounded-lg border md:col-span-2">
+          <div className="bg-white dark:bg-gray-800 p-6 rounded-lg border md:col-span-2">
             <h4 className="font-semibold mb-4">
               {t("finalDecision.questions.finalAction")}
             </h4>
@@ -376,12 +388,6 @@ const FinalDecisionPage = () => {
               ))}
             </div>
           </div>
-        </div>
-
-        <div className="text-center">
-          <Button onClick={resetForm}>
-            {t("finalDecision.results.retake")}
-          </Button>
         </div>
       </div>
     );
@@ -476,15 +482,7 @@ const FinalDecisionPage = () => {
                             value: "none",
                             label: t("finalDecision.options.none"),
                           },
-                          { value: "mahmut", label: "Mahmut" },
-                          { value: "kerim", label: "Kerim" },
-                          { value: "nuray", label: "Nuray" },
-                          { value: "fatma", label: "Fatma" },
-                          { value: "riza", label: "Rıza" },
-                          { value: "sinan", label: "Sinan" },
-                          { value: "yeliz", label: "Yeliz" },
-                          { value: "semra", label: "Semra" },
-                          { value: "nedim", label: "Nedim" },
+                          ...NAMES,
                         ].map((option) => (
                           <label
                             key={option.value}
@@ -517,15 +515,7 @@ const FinalDecisionPage = () => {
                       </h2>
                       <div className="space-y-2">
                         {[
-                          { value: "mahmut", label: "Mahmut" },
-                          { value: "kerim", label: "Kerim" },
-                          { value: "nuray", label: "Nuray" },
-                          { value: "fatma", label: "Fatma" },
-                          { value: "riza", label: "Rıza" },
-                          { value: "sinan", label: "Sinan" },
-                          { value: "yeliz", label: "Yeliz" },
-                          { value: "semra", label: "Semra" },
-                          { value: "nedim", label: "Nedim" },
+                          ...NAMES,
                           {
                             value: "other",
                             label: t("finalDecision.options.other"),

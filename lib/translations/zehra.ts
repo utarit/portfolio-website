@@ -88,16 +88,17 @@ export const translations = {
     },
 
     finalDecision: {
-      title: "Final Decision",
+      title: "Game End Survey",
       submitSuccess: "Your answers have been submitted successfully!",
       submit: "Submit",
       questions: {
         initialConclusion:
           "What conclusion did you reach first as a result of your research?",
-        responsible: "Who is responsible for Zehra's disappearance?",
+        responsible:
+          "At First, who did you think is responsible for Zehra's disappearance?",
         carAccident: "Who caused the car accident?",
         hospitalReason: "Why did Zehra go to the hospital?",
-        finalAction: "What will you do after the last conversation?",
+        finalAction: "What would you do after the last conversation?",
       },
       options: {
         killed: "Zehra was killed",
@@ -105,7 +106,7 @@ export const translations = {
         suicide: "Zehra committed suicide",
         escapedAlone: "Zehra escaped alone",
         none: "No one/she did it on her own",
-        other: "None of them, someone else",
+        other: "Someone else",
         bloodSugar: "Low blood sugar",
         kidneyFailure: "Kidney failure",
         panic: "Panic attack",
@@ -251,13 +252,14 @@ export const translations = {
     },
 
     finalDecision: {
-      title: "Son Karar",
+      title: "Oyun sonu anketi",
       submitSuccess: "Cevaplarınız başarıyla gönderildi!",
       submit: "Gönder",
       questions: {
         initialConclusion:
           "Araştırmalarınız sonucu ilk hangi sonuca ulaşmıştınız?",
-        responsible: "Zehra'nın kaybolmasından kim/kimler sorumlu?",
+        responsible:
+          "İlk tahmininizde, Zehra'nın kaybolmasından kim/kimler sorumlu olduğunu düşündünüz?",
         carAccident: "Araba kazasını kim yaptı?",
         hospitalReason: "Zehra neden hastaneye gitti?",
         finalAction: "Son konuşmadan sonra ne yapacaksın?",
@@ -268,7 +270,7 @@ export const translations = {
         suicide: "Zehra intihar etti",
         escapedAlone: "Zehra tek başına kaçtı",
         none: "Hiçkimse/Kendi başına yaptı",
-        other: "Hiçbiri, başka biri",
+        other: "Başka biri",
         bloodSugar: "Şekeri düşmesi",
         kidneyFailure: "Böbrek yetmezliği",
         panic: "Panik atak",
