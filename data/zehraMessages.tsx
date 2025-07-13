@@ -438,7 +438,7 @@ export const semraContacts: Contact[] = [
     ],
   },
   {
-    name: "Asko",
+    name: "My Darling",
     messages: [
       {
         message: "04/06/2023",

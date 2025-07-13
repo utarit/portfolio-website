@@ -240,7 +240,7 @@ export const zehraContactsEn: Contact[] = [
     ],
   },
   {
-    name: "Social Security",
+    name: "Health Insurance",
     messages: [
       {
         message: "14/06/2023",
@@ -315,7 +315,7 @@ export const mahmutContactsEn: Contact[] = [
     ],
   },
   {
-    name: "Master Gazanfer",
+    name: "Repairman Gazanfer",
     messages: [
       {
         message: "02/06/2023",
@@ -443,7 +443,7 @@ export const semraContactsEn: Contact[] = [
     ],
   },
   {
-    name: "Asko",
+    name: "My Darling",
     messages: [
       {
         message: "04/06/2023",
@@ -692,7 +692,7 @@ export const kerimContactsEn: Contact[] = [
     ],
   },
   {
-    name: "Wild Rose",
+    name: "Zehra",
     messages: [
       {
         message: "11/06/2023",
