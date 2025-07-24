@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import { useLanguage } from "@/contexts/LanguageContext";
 import {
@@ -24,8 +24,37 @@ const FinalChat = () => {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [contacts, setContacts] = useState<Contact[]>(emptyContacts);
   const [messagingInProgress, setMessagingInProgress] = useState(false);
+  const [isAudioPlaying, setIsAudioPlaying] = useState(false);
+  const audioRef = useRef<HTMLAudioElement>(null);
   const { t, language } = useLanguage();
   const { getTranslatedDecision } = useTranslatedDecisions();
+
+  useEffect(() => {
+    if (isDialogOpen && audioRef.current) {
+      audioRef.current.play().catch((error) => {
+        console.log("Audio play failed:", error);
+      });
+      setIsAudioPlaying(true);
+    } else if (!isDialogOpen && audioRef.current) {
+      audioRef.current.pause();
+      audioRef.current.currentTime = 0;
+      setIsAudioPlaying(false);
+    }
+  }, [isDialogOpen]);
+
+  const toggleAudio = () => {
+    if (audioRef.current) {
+      if (isAudioPlaying) {
+        audioRef.current.pause();
+        setIsAudioPlaying(false);
+      } else {
+        audioRef.current.play().catch((error) => {
+          console.log("Audio play failed:", error);
+        });
+        setIsAudioPlaying(true);
+      }
+    }
+  };
 
   const handleOpenDialog = () => {
     if (confirm(t("finalChat.confirmDialog")) === true) {
@@ -66,6 +95,11 @@ const FinalChat = () => {
 
   return (
     <section className="mb-8">
+      <audio
+        ref={audioRef}
+        src="/zehra/the-final-step.mp3"
+        preload="auto"
+      />
       <Button
         fullWidth
         color="error"
@@ -83,6 +117,14 @@ const FinalChat = () => {
           }}
         >
           <div className="flex flex-col gap-4 p-4 h-full md:h-[600px] overflow-auto">
+            <Button
+              className="static md:absolute bottom-4 left-4"
+              color="primary"
+              onClick={toggleAudio}
+              variant="text"
+            >
+              {isAudioPlaying ? "⏸️ Pause" : "▶️ Play"} Music
+            </Button>
             <div className="flex-1">
               <ChatApp
                 owner="Dedektif"
