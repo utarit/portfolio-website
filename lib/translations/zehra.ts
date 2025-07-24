@@ -12,7 +12,7 @@ export const translations = {
     gameTitle: "Zehra is Missing",
     gamePdf: "Game PDF (EN)",
     pdfLink:
-      "https://drive.google.com/file/d/1qDAfTbOG2GPaKuApeoZXDliYwtcmvOvM/view?usp=sharing",
+      "https://drive.google.com/file/d/1ZwMcrCa_FilEm69G_rt3PJbbMRIUUanT/view?usp=sharing",
     gameDescription: "A Mystery Game: Zehra is Missing",
 
     // Main sections
@@ -77,7 +77,7 @@ export const translations = {
       placeholder: "XXXXXXX",
       hint:
         "Did you read the newspaper article carefully? It seems a bit different from the original...",
-      solution: "Password: alacati",
+      solution: "Password: Cesme",
     },
 
     finalChat: {
@@ -175,7 +175,7 @@ export const translations = {
     gameTitle: "Zehra Kayıp",
     gamePdf: "Oyun PDF (TR)",
     pdfLink:
-      "https://drive.google.com/file/d/1x8z_Dp7p00lUCjdZmos6Uee6eWMWpjPX/view?usp=drive_link",
+      "https://drive.google.com/file/d/1wsIIWTKfEHLVwgmkhSuZJVUS5W3LS8Vk/view?usp=sharing",
     gameDescription: "Bir Gizem Oyunu: Zehra Kayıp",
 
     // Main sections
@@ -241,7 +241,7 @@ export const translations = {
       placeholder: "XXXXXXX",
       hint:
         "Gazete haberini dikkatli okudunuz mu? Orijinal haberden biraz farklı gibi...",
-      solution: "Şifre: alaçatı",
+      solution: "Şifre: Çeşme",
     },
 
     finalChat: {
