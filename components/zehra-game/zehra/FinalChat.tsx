@@ -123,7 +123,9 @@ const FinalChat = () => {
               onClick={toggleAudio}
               variant="text"
             >
-              {isAudioPlaying ? "⏸️ Pause" : "▶️ Play"} Music
+              <span className="text-black">
+                {isAudioPlaying ? "⏸️ Pause" : "▶️ Play"} Music
+              </span>
             </Button>
             <div className="flex-1">
               <ChatApp
