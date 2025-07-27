@@ -39,7 +39,7 @@ const MarketCameraReport = () => {
       <PuzzleLock
         label={t("cameraReport.label")}
         placeholder={t("cameraReport.placeholder")}
-        answer={/(c|ç|Ç|C)esme/i}
+        answer={/(c|ç|Ç|C)e(s|ş|S|Ş)me/i}
         onPuzzleSolve={() => setIsDialogOpen(true)}
         hintText={t("cameraReport.hint")}
         solutionText={t("cameraReport.solution")}
