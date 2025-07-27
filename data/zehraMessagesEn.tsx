@@ -146,7 +146,7 @@ export const zehraContactsEn: Contact[] = [
       },
       {
         message:
-          "I called Zehra and you're not answering your phones either, contact me urgently I'm starting to worry",
+          "I have called you many times Zehra and you're not answering your phones, contact me urgently I'm starting to worry",
         time: "18:43",
         person: "other",
       },
