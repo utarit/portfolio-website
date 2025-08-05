@@ -1,15 +1,20 @@
 import type { ReactNode } from "react";
 import { useEffect } from "react";
 import { motion } from "framer-motion";
+import { Pause, Play } from "lucide-react";
 
 interface PhoneShellProps {
   children: ReactNode;
   className?: string;
   onClose?: () => void;
+  musicControls?: {
+    isPlaying: boolean;
+    onToggle: () => void;
+  };
 }
 
 export function PhoneShell(
-  { children, className = "", onClose }: PhoneShellProps,
+  { children, className = "", onClose, musicControls }: PhoneShellProps,
 ) {
   useEffect(() => {
     // Prevent body scroll when phone is open
@@ -42,14 +47,14 @@ export function PhoneShell(
         {/* Phone Frame */}
         <div className="relative w-80 h-screen max-h-[700px] bg-black rounded-3xl ring-2 ring-gray-700 shadow-2xl overflow-hidden">
           {/* Screen Bezel */}
-          <div className="absolute inset-2 bg-gray-900 rounded-3xl overflow-hidden">
-            {/* Status Bar */}
-            <div className="relative z-10 bg-black">
-              <StatusBar />
+          <div className="absolute inset-2 bg-gray-900 rounded-3xl overflow-hidden flex flex-col">
+            {/* Status Bar - Fixed at top */}
+            <div className="absolute top-0 left-0 right-0 z-20 bg-black">
+              <StatusBar musicControls={musicControls} />
             </div>
 
             {/* Screen Content */}
-            <div className="relative flex-1 h-full overflow-hidden">
+            <div className="flex-1 pt-8 overflow-hidden">
               {children}
             </div>
           </div>
@@ -68,7 +73,7 @@ export function PhoneShell(
   );
 }
 
-function StatusBar() {
+function StatusBar({ musicControls }: { musicControls?: { isPlaying: boolean; onToggle: () => void } }) {
   const formatTime = () => {
     return new Date().toLocaleTimeString("en-US", {
       hour: "2-digit",
@@ -84,6 +89,18 @@ function StatusBar() {
       </div>
 
       <div className="flex items-center space-x-1">
+        {/* Music Control */}
+        {musicControls && (
+          <button
+            onClick={musicControls.onToggle}
+            className="p-1 hover:bg-white hover:bg-opacity-20 rounded-full transition-colors"
+          >
+            {musicControls.isPlaying
+              ? <Pause size={12} className="text-white" />
+              : <Play size={12} className="text-white" />}
+          </button>
+        )}
+
         {/* Signal bars */}
         <div className="flex items-end space-x-0.5">
           <div className="w-1 h-1 bg-white rounded-full"></div>

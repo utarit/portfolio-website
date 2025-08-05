@@ -8,7 +8,7 @@ interface Props {
   disabledCloseButton?: boolean;
 }
 
-const EyeIcon = () => {
+const PhoneIcon = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -18,8 +18,7 @@ const EyeIcon = () => {
       className="inline mx-2"
       viewBox="0 0 16 16"
     >
-      <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z" />
-      <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z" />
+      <path d="M3 2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V2zm6 11a1 1 0 1 0-2 0 1 1 0 0 0 2 0z"/>
     </svg>
   );
 };
@@ -56,9 +55,9 @@ const Dialog = ({ children, disabledCloseButton, onClose }: Props) => {
       >
         <div className="text-black flex justify-between items-center border-b border-black p-4">
           <h3 className="text-2xl font-bold">
-            <EyeIcon />
-            Your eyes only
-            <EyeIcon />
+            <PhoneIcon />
+            Detective&apos;s Phone
+            <PhoneIcon />
           </h3>
           <div className="flex justify-end">
             <Button

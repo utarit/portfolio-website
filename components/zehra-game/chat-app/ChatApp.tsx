@@ -3,6 +3,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { ArrowLeft, Info, Phone } from "lucide-react";
 
 import { Message } from "@/components/zehra-game/chat-app/Messenger";
+import { useLanguage } from "@/contexts/LanguageContext";
 import { Decision, Suspect } from "@/data/zehraFinalChat";
 
 export interface Contact {
@@ -17,7 +18,7 @@ interface PersonListProps {
   contacts: Contact[];
   onSelect: (index: number) => void;
   selectedContact: string;
-  owner?: string;
+  owner: string;
 }
 
 const PersonList = ({
@@ -26,6 +27,8 @@ const PersonList = ({
   selectedContact,
   owner,
 }: PersonListProps) => {
+  const { t } = useLanguage();
+
   const formatTime = (date?: Date) => {
     if (!date) return "";
     const now = new Date();
@@ -41,7 +44,7 @@ const PersonList = ({
     <div className="flex flex-col h-full bg-black w-full overflow-hidden">
       <div className="flex items-center justify-between px-4 py-3 border-b border-gray-800 flex-shrink-0">
         <h1 className="text-lg font-semibold text-white">
-          {owner ? `${owner}'s Messages` : "Messages"}
+          {`${owner}'s ${t("chat.messages")}`}
         </h1>
       </div>
 
@@ -92,17 +95,29 @@ const ChatApp = ({
   owner,
   chatOptions,
   onOptionClick,
+  isTyping: externalIsTyping,
+  typingContact: externalTypingContact,
 }: {
   contacts: Contact[];
   owner: string;
   chatOptions?: (person: Suspect) => Decision[];
   onOptionClick?: (person: Suspect, type: Decision) => void;
+  isTyping?: boolean;
+  typingContact?: string | null;
 }) => {
   const [selectedContactIndex, setSelectedContactIndex] = useState<number>(0);
   const [currentConversation, setCurrentConversation] = useState<string | null>(
     null,
   );
   const [isTyping, setIsTyping] = useState(false);
+
+  // Use external typing state if provided, otherwise use internal state
+  const shouldShowTyping = externalIsTyping !== undefined
+    ? externalIsTyping
+    : isTyping;
+  const shouldShowTypingForContact = externalTypingContact !== undefined
+    ? externalTypingContact === currentConversation
+    : isTyping;
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   const selectedContactName = contacts[selectedContactIndex]?.name;
@@ -112,12 +127,20 @@ const ChatApp = ({
   );
 
   const scrollToBottom = () => {
-    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+    if (messagesEndRef.current) {
+      messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   useEffect(() => {
-    scrollToBottom();
-  }, [currentConversation, contacts]);
+    // Only auto-scroll when there are new messages, not when switching conversations
+    if (currentConversation) {
+      const conversation = contacts.find((c) => c.name === currentConversation);
+      if (conversation && conversation.messages.length > 0) {
+        setTimeout(scrollToBottom, 100);
+      }
+    }
+  }, [contacts, currentConversation]);
 
   const handleSelectContact = (index: number) => {
     setSelectedContactIndex(index);
@@ -127,12 +150,8 @@ const ChatApp = ({
   const handleChoiceSelect = (choice: Decision) => {
     if (!onOptionClick || !selectedContactName) return;
 
-    setIsTyping(true);
-
-    setTimeout(() => {
-      setIsTyping(false);
-      onOptionClick(selectedContactName as Suspect, choice);
-    }, 1000 + Math.random() * 2000);
+    // Just trigger the option click, let the parent handle message flow
+    onOptionClick(selectedContactName as Suspect, choice);
   };
 
   const formatTime = (time?: string) => {
@@ -141,14 +160,12 @@ const ChatApp = ({
   };
 
   const renderConversationList = () => (
-    <div className="h-full flex flex-col">
-      <PersonList
-        contacts={contacts}
-        onSelect={handleSelectContact}
-        selectedContact={selectedContactName}
-        owner={owner}
-      />
-    </div>
+    <PersonList
+      contacts={contacts}
+      onSelect={handleSelectContact}
+      selectedContact={selectedContactName}
+      owner={owner}
+    />
   );
 
   const renderConversation = () => {
@@ -188,7 +205,7 @@ const ChatApp = ({
           {conversation.messages.map((message, index) => (
             <motion.div
               key={`${message.message}-${index}`}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: message.person === "system" ? 0 : 20 }}
               animate={{ opacity: 1, y: 0 }}
               className={`flex ${
                 message.person === "me"
@@ -235,7 +252,7 @@ const ChatApp = ({
             </motion.div>
           ))}
 
-          {isTyping && (
+          {shouldShowTyping && shouldShowTypingForContact && (
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -264,45 +281,35 @@ const ChatApp = ({
           <div ref={messagesEndRef} />
         </div>
 
-        {chatOptionsForSelectedContact && onOptionClick && !isTyping && (
-          <div className="p-3 space-y-2 bg-gray-900 border-t border-gray-800 flex-shrink-0">
-            <AnimatePresence>
-              {chatOptionsForSelectedContact.map((option, index) => (
-                <motion.button
-                  key={option.message}
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: 20 }}
-                  transition={{ delay: index * 0.1 }}
-                  className={`
-                    w-full text-left p-2 rounded-xl bg-blue-500 hover:bg-blue-600 text-white transition-colors text-sm
-                    ${
-                    conversation.messages.length > 0
-                      ? "opacity-50 cursor-not-allowed"
-                      : ""
-                  }
-                  `}
-                  onClick={() =>
-                    conversation.messages.length === 0 &&
-                    handleChoiceSelect(option)}
-                  disabled={conversation.messages.length > 0}
-                >
-                  {option.message}
-                </motion.button>
-              ))}
-            </AnimatePresence>
-          </div>
-        )}
+        {chatOptionsForSelectedContact && onOptionClick &&
+          !conversation.messages.length &&
+          (
+            <div className="p-3 space-y-2 bg-gray-900 border-t border-gray-800 flex-shrink-0">
+              <AnimatePresence>
+                {chatOptionsForSelectedContact.map((option, index) => (
+                  <motion.button
+                    key={option.message}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -20 }}
+                    transition={{ delay: index * 0.1 }}
+                    className="w-full text-left p-3 rounded-xl bg-blue-500 hover:bg-blue-600 text-white transition-colors text-sm font-medium shadow-lg"
+                    onClick={() => handleChoiceSelect(option)}
+                  >
+                    {option.message}
+                  </motion.button>
+                ))}
+              </AnimatePresence>
+            </div>
+          )}
       </div>
     );
   };
 
   return (
-    <div className="h-full w-full overflow-hidden">
-      <AnimatePresence mode="wait">
-        {currentConversation ? renderConversation() : renderConversationList()}
-      </AnimatePresence>
-    </div>
+    <AnimatePresence mode="wait">
+      {currentConversation ? renderConversation() : renderConversationList()}
+    </AnimatePresence>
   );
 };
 
