@@ -44,13 +44,7 @@ export const getFinalAnswerEn = (
     });
   };
 
-  const initialMessage: Message[] = [
-    {
-      person: "me",
-      time: getMessageTime(),
-      message: finalDesision.message,
-    },
-  ];
+  const initialMessage: Message[] = [];
 
   let result = initialMessage;
 

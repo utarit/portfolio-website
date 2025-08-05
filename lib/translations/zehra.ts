@@ -142,6 +142,11 @@ export const translations = {
       close: "Close",
     },
 
+    // Chat UI
+    chat: {
+      messages: "Messages",
+    },
+
     messages: {
       wrongPassword: "Wrong password",
       confirmHint: "Are you sure you want to get a hint?",
@@ -304,6 +309,11 @@ export const translations = {
       getHint: "İpucu Al",
       showAnswer: "Cevabı göster",
       close: "Kapat",
+    },
+
+    // Chat UI
+    chat: {
+      messages: "Mesajlarım",
     },
 
     messages: {

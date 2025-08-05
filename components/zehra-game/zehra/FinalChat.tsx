@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { AnimatePresence } from "framer-motion";
 
 import { useLanguage } from "@/contexts/LanguageContext";
 import {
@@ -13,7 +14,7 @@ import { Button } from "@/design-system/Button";
 import { useTranslatedDecisions } from "@/lib/translations/zehraChat";
 
 import ChatApp, { Contact } from "../chat-app/ChatApp";
-import Dialog from "../Dialog";
+import { PhoneShell } from "../PhoneShell";
 
 const emptyContacts = Object.values(Suspect).map((suspect) => ({
   name: suspect,
@@ -23,8 +24,9 @@ const emptyContacts = Object.values(Suspect).map((suspect) => ({
 const FinalChat = () => {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [contacts, setContacts] = useState<Contact[]>(emptyContacts);
-  const [messagingInProgress, setMessagingInProgress] = useState(false);
   const [isAudioPlaying, setIsAudioPlaying] = useState(false);
+  const [isTyping, setIsTyping] = useState(false);
+  const [typingContact, setTypingContact] = useState<string | null>(null);
   const audioRef = useRef<HTMLAudioElement>(null);
   const { t, language } = useLanguage();
   const { getTranslatedDecision } = useTranslatedDecisions();
@@ -69,11 +71,48 @@ const FinalChat = () => {
     }));
   };
 
+  // Calculate dynamic delay based on message length (simulating reading/typing time)
+  const calculateMessageDelay = (message: string): number => {
+    const totalDelay = 1000 + message.length * 50;
+    return Math.min(totalDelay, 5000);
+  };
+
   const handleSelectOption = (person: Suspect, type: Decision) => {
-    setMessagingInProgress(true);
+    // 1. First add the user's message immediately
+    const userMessage = {
+      message: type.message,
+      person: "me" as const,
+      time: new Date().toLocaleTimeString("en-US", {
+        hour: "2-digit",
+        minute: "2-digit",
+      }),
+    };
+
+    setContacts((prev) => {
+      const newContacts = prev.map((contact) =>
+        contact.name === person
+          ? { ...contact, messages: [...contact.messages, userMessage] }
+          : contact
+      );
+      return newContacts;
+    });
+
+    // 2. Show typing indicator after user message
+    setTimeout(() => {
+      setIsTyping(true);
+      setTypingContact(person);
+    }, 1000);
+
+    // 3. Get response messages and start adding them after typing delay
     const messages = getFinalAnswer(person, type, language);
 
     const putMessage = (index: number) => {
+      // Hide typing indicator when first response arrives
+      if (index === 0) {
+        setIsTyping(false);
+        setTypingContact(null);
+      }
+
       setContacts((prev) => {
         const newContacts = prev.map((contact) =>
           contact.name === person
@@ -83,14 +122,14 @@ const FinalChat = () => {
         return newContacts;
       });
 
+      // Continue with next message if there are more
       if (index < messages.length - 1) {
-        setTimeout(() => putMessage(index + 1), 3000);
-      } else {
-        setMessagingInProgress(false);
+        const nextMessageDelay = calculateMessageDelay(messages[index].message);
+        setTimeout(() => putMessage(index + 1), nextMessageDelay);
       }
     };
 
-    putMessage(0);
+    setTimeout(() => putMessage(0), 5000);
   };
 
   return (
@@ -108,36 +147,31 @@ const FinalChat = () => {
       >
         {t("finalChat.title")}
       </Button>
-      {isDialogOpen && (
-        <Dialog
-          disabledCloseButton={messagingInProgress}
-          onClose={() => {
-            setIsDialogOpen(false);
-            setContacts(emptyContacts);
-          }}
-        >
-          <div className="flex flex-col gap-4 p-4 h-full md:h-[600px] overflow-auto">
-            <Button
-              className="static md:absolute bottom-4 left-4"
-              color="primary"
-              onClick={toggleAudio}
-              variant="text"
-            >
-              <span className="text-black">
-                {isAudioPlaying ? "⏸️ Pause" : "▶️ Play"} Music
-              </span>
-            </Button>
-            <div className="flex-1">
+      <AnimatePresence>
+        {isDialogOpen && (
+          <PhoneShell
+            onClose={() => {
+              setIsDialogOpen(false);
+              setContacts(emptyContacts);
+            }}
+            musicControls={{
+              isPlaying: isAudioPlaying,
+              onToggle: toggleAudio,
+            }}
+          >
+            <div className="h-full">
               <ChatApp
-                owner="Dedektif"
+                owner="Detective"
                 contacts={contacts}
                 chatOptions={getTranslatedDecisions}
                 onOptionClick={handleSelectOption}
+                isTyping={isTyping}
+                typingContact={typingContact}
               />
             </div>
-          </div>
-        </Dialog>
-      )}
+          </PhoneShell>
+        )}
+      </AnimatePresence>
     </section>
   );
 };

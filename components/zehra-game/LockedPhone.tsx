@@ -1,10 +1,11 @@
 "use client";
 import { useState } from "react";
+import { AnimatePresence } from "framer-motion";
 
 import { Button } from "@/design-system/Button";
 
-import Dialog from "./Dialog";
 import PhoneLockScreen from "./PhoneLockScreen";
+import { PhoneShell } from "./PhoneShell";
 
 const PhoneSvg = () => {
   return (
@@ -93,21 +94,23 @@ const LockedPhone = ({
         <PhoneSvg />
         <span>{text}</span>
       </Button>
-      {isLockDialogOpen && (
-        <Dialog onClose={() => setIsLockDialogOpen(false)}>
-          <div className="flex flex-col items-center justify-center p-4">
+      <AnimatePresence>
+        {isLockDialogOpen && (
+          <PhoneShell onClose={() => setIsLockDialogOpen(false)}>
             <PhoneLockScreen
               password={password}
               onUnlock={handleUnlock}
               text={lockText}
               backgroundImage={lockBackground}
             />
-          </div>
-        </Dialog>
-      )}
-      {isContentOpen && (
-        <Dialog onClose={() => setIsContentOpen(false)}>{children}</Dialog>
-      )}
+          </PhoneShell>
+        )}
+        {isContentOpen && (
+          <PhoneShell onClose={() => setIsContentOpen(false)}>
+            {children}
+          </PhoneShell>
+        )}
+      </AnimatePresence>
     </>
   );
 };
