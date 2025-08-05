@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 import { useEffect } from "react";
 import { motion } from "framer-motion";
-import { Pause, Play } from "lucide-react";
+import { Pause, Play, X } from "lucide-react";
 
 interface PhoneShellProps {
   children: ReactNode;
@@ -50,7 +50,7 @@ export function PhoneShell(
           <div className="absolute inset-2 bg-gray-900 rounded-3xl overflow-hidden flex flex-col">
             {/* Status Bar - Fixed at top */}
             <div className="absolute top-0 left-0 right-0 z-20 bg-black">
-              <StatusBar musicControls={musicControls} />
+              <StatusBar musicControls={musicControls} onClose={onClose} />
             </div>
 
             {/* Screen Content */}
@@ -73,7 +73,13 @@ export function PhoneShell(
   );
 }
 
-function StatusBar({ musicControls }: { musicControls?: { isPlaying: boolean; onToggle: () => void } }) {
+function StatusBar({
+  musicControls,
+  onClose,
+}: {
+  musicControls?: { isPlaying: boolean; onToggle: () => void };
+  onClose?: () => void;
+}) {
   const formatTime = () => {
     return new Date().toLocaleTimeString("en-US", {
       hour: "2-digit",
@@ -83,12 +89,12 @@ function StatusBar({ musicControls }: { musicControls?: { isPlaying: boolean; on
   };
 
   return (
-    <div className="flex items-center justify-between px-6 py-2 text-white text-sm font-medium">
+    <div className="flex items-center justify-between px-4 py-2 text-white text-sm font-medium">
       <div className="flex items-center space-x-1">
         <span>{formatTime()}</span>
       </div>
 
-      <div className="flex items-center space-x-1">
+      <div className="flex items-center space-x-2">
         {/* Music Control */}
         {musicControls && (
           <button
@@ -129,6 +135,17 @@ function StatusBar({ musicControls }: { musicControls?: { isPlaying: boolean; on
           </div>
           <span className="text-xs">100%</span>
         </div>
+
+        {/* Close Button */}
+        {onClose && (
+          <button
+            onClick={onClose}
+            className="w-5 h-5 bg-red-500 hover:bg-red-600 rounded-full flex items-center justify-center transition-colors duration-200"
+            aria-label="Close phone"
+          >
+            <X size={12} className="text-white" />
+          </button>
+        )}
       </div>
     </div>
   );
