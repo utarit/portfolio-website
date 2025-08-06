@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import classNames from "classnames";
 import { motion } from "framer-motion";
 
 const numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "", "0", ""];
@@ -57,11 +58,12 @@ const PhoneLockScreen: React.FC<PhoneLockScreenProps> = ({
       dots.push(
         <motion.div
           key={i}
-          className={`w-4 h-4 rounded-full border-2 ${
+          className={classNames(
+            "w-4 h-4 rounded-full border-2",
             i < enteredPassword.length
               ? "bg-white border-white"
-              : "border-white border-opacity-50"
-          }`}
+              : "border-white border-opacity-50",
+          )}
           animate={{
             scale: i === enteredPassword.length - 1 ? [1, 1.2, 1] : 1,
           }}
@@ -129,15 +131,16 @@ const PhoneLockScreen: React.FC<PhoneLockScreenProps> = ({
         </div>
 
         {/* Keypad */}
-        <div className="grid grid-cols-3 gap-6 mb-8">
+        <div className="grid grid-cols-3 gap-3 gap-x-6 mb-8">
           {numbers.map((val, index) => (
             <motion.button
               key={index}
-              className={`w-16 h-16 rounded-full flex items-center justify-center text-2xl font-light transition-all duration-150 ${
+              className={classNames(
+                "w-16 h-16 rounded-full flex items-center justify-center text-2xl font-light transition-all duration-150",
                 val
                   ? "bg-white bg-opacity-10 backdrop-blur-sm border border-white border-opacity-20 hover:bg-opacity-20 active:bg-opacity-30 active:scale-95"
                   : "invisible"
-              }`}
+              )}
               onClick={() => handleButtonClick(val)}
               disabled={!val}
               whileTap={{ scale: 0.95 }}

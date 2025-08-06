@@ -254,7 +254,7 @@ export const zehraContactsEn: Contact[] = [
       },
       {
         message:
-          "Details of your hospital visit are as follows. Name: Zehra Yılmaz, Gender: Female, Examination Date: 13.06.2023 18:35, Diagnosis: Abortion (Cause unknown) Medication given: Birsoklen (50mg), Parlo (500mg)",
+          "Details of your hospital visit are as follows. Name: Zehra Yılmaz, Gender: Female, Examination Date: 13.06.2023 18:35, Diagnosis: Abortus (Cause unknown) Medication given: Birsoklen (50mg), Parlo (500mg)",
         time: "19:22",
         person: "other",
       },

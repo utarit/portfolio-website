@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import classNames from "classnames";
 import { AnimatePresence, motion } from "framer-motion";
 import { ArrowLeft, Info, Phone } from "lucide-react";
 
@@ -52,9 +53,10 @@ const PersonList = ({
         {contacts.map((contact, index) => (
           <motion.button
             key={contact.name}
-            className={`w-full px-4 py-3 flex items-center space-x-3 hover:bg-gray-900 transition-colors border-b border-gray-800 border-opacity-50 ${
-              selectedContact === contact.name ? "bg-gray-800" : ""
-            }`}
+            className={classNames(
+              "w-full px-4 py-3 flex items-center space-x-3 hover:bg-gray-900 transition-colors border-b border-gray-800 border-opacity-50",
+              { "bg-gray-800": selectedContact === contact.name },
+            )}
             onClick={() => onSelect(index)}
             whileTap={{ scale: 0.98 }}
           >
@@ -207,22 +209,25 @@ const ChatApp = ({
               key={`${message.message}-${index}`}
               initial={{ opacity: 0, y: message.person === "system" ? 0 : 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className={`flex ${
-                message.person === "me"
-                  ? "justify-end"
-                  : message.person === "system"
-                  ? "justify-center"
-                  : "justify-start"
-              }`}
+              className={classNames("flex", {
+                "justify-end": message.person === "me",
+                "justify-center": message.person === "system",
+                "justify-start": message.person !== "me" &&
+                  message.person !== "system",
+              })}
             >
               <div
-                className={`max-w-[250px] px-3 py-2 rounded-xl shadow-lg text-sm ${
-                  message.person === "me"
-                    ? "bg-blue-500 text-white"
-                    : message.person === "system"
-                    ? "bg-gray-600 text-gray-200 text-xs"
-                    : "bg-gray-700 text-white"
-                }`}
+                className={classNames(
+                  "max-w-[250px] px-3 py-2 shadow-lg text-sm",
+                  {
+                    "bg-blue-500 text-white rounded-xl rounded-br-none":
+                      message.person === "me",
+                    "bg-gray-600 text-gray-200 text-xs rounded-xl":
+                      message.person === "system",
+                    "bg-gray-700 text-white rounded-xl rounded-bl-none":
+                      message.person !== "me" && message.person !== "system",
+                  },
+                )}
               >
                 <div className="break-words">
                   {message.message}
@@ -239,11 +244,10 @@ const ChatApp = ({
                 </div>
                 {message.time && (
                   <div
-                    className={`text-xs mt-1 ${
-                      message.person === "me"
-                        ? "text-blue-100"
-                        : "text-gray-400"
-                    }`}
+                    className={classNames("text-xs mt-1", {
+                      "text-blue-100": message.person === "me",
+                      "text-gray-400": message.person !== "me",
+                    })}
                   >
                     {formatTime(message.time)}
                   </div>

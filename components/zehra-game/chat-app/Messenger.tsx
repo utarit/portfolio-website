@@ -36,18 +36,22 @@ const Messenger = ({ person, messages }: MessengerProps) => {
             })}
           >
             <div
-              className={classNames("max-w-[250px] px-3 py-2 rounded-xl shadow-lg break-words text-sm", {
-                "bg-blue-500 text-white": message.person === "me",
-                "bg-gray-700 text-white": message.person === "other",
-                "bg-gray-600 text-gray-200 text-xs": message.person === "system",
-              })}
+              className={classNames(
+                "max-w-[250px] px-3 py-2 rounded-xl shadow-lg break-words text-sm",
+                {
+                  "bg-blue-500 text-white": message.person === "me",
+                  "bg-gray-700 text-white": message.person === "other",
+                  "bg-gray-600 text-gray-200 text-xs":
+                    message.person === "system",
+                },
+              )}
             >
               <div>
-                {message.message}{" "}
-                {message.link && (
+                {message.message} {message.link && (
                   <a
                     className={classNames("underline ml-1", {
-                      "text-blue-300": message.person === "me" || message.person === "system",
+                      "text-blue-300": message.person === "me" ||
+                        message.person === "system",
                       "text-blue-400": message.person === "other",
                     })}
                     href={message.link.url}
@@ -62,7 +66,8 @@ const Messenger = ({ person, messages }: MessengerProps) => {
                 <div
                   className={classNames("text-xs mt-1", {
                     "text-blue-100": message.person === "me",
-                    "text-gray-400": message.person === "other" || message.person === "system",
+                    "text-gray-400": message.person === "other" ||
+                      message.person === "system",
                   })}
                 >
                   {message.time}

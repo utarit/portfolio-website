@@ -1,3 +1,5 @@
+import classNames from "classnames";
+
 interface ResultBarProps {
   label: string;
   percentage: string;
@@ -13,7 +15,7 @@ export const ResultBar = ({ label, percentage, color }: ResultBarProps) => {
       <div className="sm:col-span-3 flex items-center space-x-2">
         <div className="w-full bg-gray-200 rounded-full h-2.5">
           <div
-            className={`${color} h-2.5 rounded-full`}
+            className={classNames(color, "h-2.5 rounded-full")}
             style={{
               width: `${percentage}%`,
             }}
