@@ -10,7 +10,6 @@ import {
   getFinalSentences,
   Suspect,
 } from "@/data/zehraFinalChat";
-import { Button } from "@/design-system/Button";
 import { useTranslatedDecisions } from "@/lib/translations/zehraChat";
 
 import ChatApp, { Contact } from "../chat-app/ChatApp";
@@ -139,14 +138,15 @@ const FinalChat = () => {
         src="/zehra/the-final-step.mp3"
         preload="auto"
       />
-      <Button
-        fullWidth
-        color="error"
+      <button
         onClick={handleOpenDialog}
-        type="button"
+        className="bg-gray-900 border border-red-500 rounded p-4 mb-6 hover:bg-red-900/20 transition-colors cursor-pointer w-full"
       >
-        {t("finalChat.title")}
-      </Button>
+        <div className="text-red-300 font-mono text-xs leading-relaxed">
+          {t("finalChat.title")}
+        </div>
+      </button>
+
       <AnimatePresence>
         {isDialogOpen && (
           <PhoneShell
