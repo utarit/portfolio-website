@@ -161,7 +161,7 @@ const FinalChat = () => {
           >
             <div className="h-full">
               <ChatApp
-                owner="Detective"
+                owner={t("chat.detective")}
                 contacts={contacts}
                 chatOptions={getTranslatedDecisions}
                 onOptionClick={handleSelectOption}

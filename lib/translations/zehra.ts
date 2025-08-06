@@ -145,6 +145,63 @@ export const translations = {
     // Chat UI
     chat: {
       messages: "Messages",
+      detective: "Detective",
+    },
+
+    // Hints Modal
+    hints: {
+      buttonText: "HINTS",
+      modalTitle: "CASE FILES DATABASE",
+      fileNumber: "FILE #",
+      evidence: "Evidence",
+      status: "Status",
+      statusClassified: "Classified",
+      hintButton: "HINT",
+      answerButton: "ANSWER",
+      confidentialAccess: "CONFIDENTIAL DATABASE ACCESS",
+      names: {
+        chest: "Chest",
+        corkBoard: "Cork Board",
+        phoneZehra: "Phone: Zehra",
+        phoneMahmut: "Phone: Mahmut",
+        phoneKerim: "Phone: Kerim",
+        phoneSemra: "Phone: Semra",
+        phoneRiza: "Phone: Riza",
+      },
+    },
+
+    // Phone UI
+    phone: {
+      closeButton: "Close phone",
+      ownerPhone: "'s Phone",
+    },
+
+    // Game terminal messages
+    terminal: {
+      evidenceDB: "EVIDENCE_DB.exe",
+      zehraChest: "Zehra_CHEST.exe",
+      accusation: "ACCUSATION.exe",
+      analyzingEvidence: "analyzing evidence board...",
+      patternRecognition: "pattern recognition activated",
+      enterKeyword: "enter the keyword:",
+      fieldAgent: "field agent waiting with chest access",
+      chestLock: "chest has a lock, need the chest password",
+      sendPassword: "send the chest password:",
+      finalDecision: "FINAL DECISION",
+      accessButton: "ACCESS",
+      errorInvalid: "ERROR: Invalid passphrase.",
+      errorLock: "AGENT: Lock didn't open.",
+      deepScanActive: "DEEP SCAN > ACTIVE",
+      connectionSecure: "CONNECTION > SECURE",
+      initiateScan: "initiate deep scan on zehra's personal items",
+      scanComplete: "scan complete. items indexed:",
+      personaFile: "persona.exe > CORRUPTED",
+      memoryTrace: "memory_trace.dat > FOUND",
+      location: "location.bat > ACTIVE",
+      generateAccusation: "generate accusation.bat file",
+      compiling: "compiling evidence...",
+      crossReference: "cross-referencing timeline...",
+      verdict: "verdict.exe > READY TO EXECUTE",
     },
 
     messages: {
@@ -314,6 +371,63 @@ export const translations = {
     // Chat UI
     chat: {
       messages: "Mesajlarım",
+      detective: "Dedektif",
+    },
+
+    // Hints Modal
+    hints: {
+      buttonText: "İPUÇLARI",
+      modalTitle: "DAVA DOSYALARI VERİTABANI",
+      fileNumber: "DOSYA #",
+      evidence: "Delil",
+      status: "Durum",
+      statusClassified: "Gizli",
+      hintButton: "İPUCU",
+      answerButton: "CEVAP",
+      confidentialAccess: "GİZLİ VERİTABANI ERİŞİMİ",
+      names: {
+        chest: "Sandık",
+        corkBoard: "Mantar Pano",
+        phoneZehra: "Telefon: Zehra",
+        phoneMahmut: "Telefon: Mahmut",
+        phoneKerim: "Telefon: Kerim",
+        phoneSemra: "Telefon: Semra",
+        phoneRiza: "Telefon: Rıza",
+      },
+    },
+
+    // Phone UI
+    phone: {
+      closeButton: "Telefonu kapat",
+      ownerPhone: ", Telefon",
+    },
+
+    // Game terminal messages
+    terminal: {
+      evidenceDB: "DELİL_VT.exe",
+      zehraChest: "Zehra_SANDIK.exe",
+      accusation: "SUÇLAMA.exe",
+      analyzingEvidence: "delil panosu analiz ediliyor...",
+      patternRecognition: "desen tanıma sistemi aktif",
+      enterKeyword: "anahtar kelimeyi girin:",
+      fieldAgent: "saha ajanı sandık erişimi için bekliyor",
+      chestLock: "sandıkta kilit var, sandık şifresi gerekiyor",
+      sendPassword: "sandık şifresini gönderin:",
+      finalDecision: "FINAL KARAR",
+      accessButton: "ERİŞ",
+      errorInvalid: "HATA: Geçersiz şifre.",
+      errorLock: "AJAN: Kilit açılmadı.",
+      deepScanActive: "DERİN TARAMA > AKTİF",
+      connectionSecure: "BAĞLANTI > GÜVENLİ",
+      initiateScan: "zehra'nın kişisel eşyalarında derin tarama başlat",
+      scanComplete: "tarama tamamlandı. öğeler indekslendi:",
+      personaFile: "persona.exe > BOZUK",
+      memoryTrace: "hafıza_izi.dat > BULUNDU",
+      location: "konum.bat > AKTİF",
+      generateAccusation: "suçlama.bat dosyası oluştur",
+      compiling: "deliller derleniyor...",
+      crossReference: "zaman çizelgesi çapraz referans...",
+      verdict: "karar.exe > YÜRÜTMEYE HAZIR",
     },
 
     messages: {

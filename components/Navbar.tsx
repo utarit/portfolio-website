@@ -32,7 +32,7 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
   return (
-    <header className="z-50 flex justify-between gap-5 py-4 px-4 bg-background-200 bg-opacity-60 backdrop-blur fixed left-0 right-0">
+    <header className="z-20 flex justify-between gap-5 py-4 px-4 bg-background-200 bg-opacity-60 backdrop-blur fixed left-0 right-0">
       <Button
         href="/"
         variant="text"

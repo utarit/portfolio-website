@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import classNames from "classnames";
 import { AnimatePresence } from "framer-motion";
 import Image from "next/image";
 
@@ -70,7 +71,7 @@ const GameContent = () => {
           {/* Hints Modal */}
           <HintsModal />
 
-          <div className="relative z-10 space-y-12">
+          <div className="relative space-y-12">
             {/* Row 1: Phones */}
             <div className="flex flex-wrap justify-center gap-4">
               <PhoneComponent
@@ -123,7 +124,7 @@ const GameContent = () => {
                       <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
                       <div className="w-3 h-3 bg-green-500 rounded-full"></div>
                       <span className="text-green-400 text-xs font-mono ml-2">
-                        EVIDENCE_DB.exe
+                        {t("terminal.evidenceDB")}
                       </span>
                     </div>
 
@@ -147,16 +148,18 @@ const GameContent = () => {
 
                     {/* Terminal Content */}
                     <div className="text-green-400 font-mono text-xs space-y-1 mb-4">
-                      <div>$ analyzing evidence board...</div>
-                      <div>$ pattern recognition activated</div>
-                      <div className="text-green-300">$ enter the keyword:</div>
+                      <div>$ {t("terminal.analyzingEvidence")}</div>
+                      <div>$ {t("terminal.patternRecognition")}</div>
+                      <div className="text-green-300">
+                        $ {t("terminal.enterKeyword")}
+                      </div>
                     </div>
 
                     <HackerPuzzleInput
                       placeholder={t("cameraReport.placeholder")}
                       answer={/(c|ç|Ç|C)e(s|ş|S|Ş)me/i}
                       onPuzzleSolve={() => setIsCorkBoardDialogOpen(true)}
-                      errorMessage="$ ERROR: Invalid passphrase."
+                      errorMessage={`$ ${t("terminal.errorInvalid")}`}
                     />
                   </div>
 
@@ -180,7 +183,7 @@ const GameContent = () => {
                         <div className="w-3 h-3 bg-green-500 rounded-full">
                         </div>
                         <span className="text-green-400 text-xs font-mono ml-2">
-                          Zehra_CHEST.exe
+                          {t("terminal.zehraChest")}
                         </span>
                       </div>
 
@@ -193,10 +196,10 @@ const GameContent = () => {
 
                       {/* Terminal Content */}
                       <div className="text-green-400 font-mono text-xs space-y-1 mb-4">
-                        <div>$ field agent waiting with chest access</div>
-                        <div>$ chest has a lock, need the chest password</div>
+                        <div>$ {t("terminal.fieldAgent")}</div>
+                        <div>$ {t("terminal.chestLock")}</div>
                         <div className="text-green-300">
-                          $ send the chest password:
+                          $ {t("terminal.sendPassword")}
                         </div>
                       </div>
 
@@ -204,7 +207,7 @@ const GameContent = () => {
                         placeholder={t("chestPuzzle.placeholder")}
                         answer={/k(u|ü|Ü)lked(ı|i|İ)s(ı|i|İ)|cinderella/i}
                         onPuzzleSolve={() => setIsChestDialogOpen(true)}
-                        errorMessage="$ AGENT: Lock didn&apos;t open."
+                        errorMessage={`$ ${t("terminal.errorLock")}`}
                       />
                     </div>
 
@@ -227,14 +230,14 @@ const GameContent = () => {
                         <div className="w-3 h-3 bg-green-500 rounded-full">
                         </div>
                         <span className="text-red-400 text-xs font-mono ml-2">
-                          ACCUSATION.exe
+                          {t("terminal.accusation")}
                         </span>
                       </div>
 
                       {/* Accusation Content */}
                       <div className="text-center py-8">
                         <div className="text-red-400 font-mono text-sm mb-4">
-                          ⚠️ FINAL DECISION ⚠️
+                          ⚠️ {t("terminal.finalDecision")} ⚠️
                         </div>
                         <FinalChat />
                       </div>
@@ -301,10 +304,11 @@ const PhoneComponent = ({
   color: string;
   password: string;
   owner: string;
-  contacts: any;
+  contacts: any[];
   lockBackground?: string;
   lockText?: string;
 }) => {
+  const { t } = useLanguage();
   const [isUnlocked, setIsUnlocked] = useState(false);
   const [isLockDialogOpen, setIsLockDialogOpen] = useState(false);
   const [isContentOpen, setIsContentOpen] = useState(false);
@@ -336,15 +340,19 @@ const PhoneComponent = ({
 
           {/* Phone Body */}
           <div
-            className={`relative w-24 h-36 ${color} rounded-2xl shadow-xl border-2 border-gray-700`}
+            className={classNames(
+              "relative w-24 h-36 rounded-2xl shadow-xl border-2 border-gray-700",
+              color,
+            )}
           >
             {/* Screen */}
             <div className="absolute inset-2 bg-black rounded-xl overflow-hidden flex items-center justify-center">
               {/* Lock Icon on Screen */}
               <div
-                className={`w-8 h-8 rounded-full flex items-center justify-center ${
-                  isUnlocked ? "bg-green-500" : "bg-red-500"
-                }`}
+                className={classNames(
+                  "w-8 h-8 rounded-full flex items-center justify-center",
+                  isUnlocked ? "bg-green-500" : "bg-red-500",
+                )}
               >
                 <svg width="16" height="16" fill="white" viewBox="0 0 16 16">
                   {isUnlocked
@@ -375,7 +383,8 @@ const PhoneComponent = ({
         {/* Phone Tooltip */}
         <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 hidden group-hover:block z-50">
           <div className="bg-black text-white text-sm rounded-lg px-3 py-2 shadow-lg whitespace-nowrap">
-            {owner}&apos;s Phone
+            {owner}
+            {t("phone.ownerPhone")}
             <div className="absolute top-full left-1/2 transform -translate-x-1/2 border-4 border-transparent border-t-black">
             </div>
           </div>
@@ -416,6 +425,7 @@ const HackerPuzzleInput = ({
   onPuzzleSolve: () => void;
   errorMessage?: string;
 }) => {
+  const { t } = useLanguage();
   const [error, setError] = useState(false);
   const [input, setInput] = useState("");
 
@@ -450,12 +460,12 @@ const HackerPuzzleInput = ({
         type="submit"
         className="w-full bg-green-600 hover:bg-green-700 text-black font-mono font-bold py-2 px-4 rounded transition-colors duration-200 border border-green-400 hover:border-green-300 shadow-lg hover:shadow-green-500/30"
       >
-        &gt;&gt; ACCESS
+        &gt;&gt; {t("terminal.accessButton")}
       </button>
 
       {error && (
         <div className="text-red-400 font-mono text-xs">
-          {errorMessage || "$ ERROR: Invalid passphrase."}
+          {errorMessage || `$ ${t("terminal.errorInvalid")}`}
         </div>
       )}
     </form>

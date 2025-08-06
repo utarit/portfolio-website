@@ -1,7 +1,10 @@
 import type { ReactNode } from "react";
 import { useEffect } from "react";
+import classNames from "classnames";
 import { motion } from "framer-motion";
 import { Pause, Play, X } from "lucide-react";
+
+import { useLanguage } from "@/contexts/LanguageContext";
 
 interface PhoneShellProps {
   children: ReactNode;
@@ -33,7 +36,10 @@ export function PhoneShell(
 
   return (
     <div
-      className={`fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-75 backdrop-blur-sm ${className}`}
+      className={classNames(
+        "fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-75 backdrop-blur-md",
+        className,
+      )}
       onClick={handleBackdropClick}
     >
       <motion.div
@@ -45,7 +51,7 @@ export function PhoneShell(
         onClick={(e) => e.stopPropagation()}
       >
         {/* Phone Frame */}
-        <div className="relative w-80 h-screen max-h-[700px] bg-black rounded-3xl ring-2 ring-gray-700 shadow-2xl overflow-hidden">
+        <div className="relative w-80 h-screen max-h-[min(700px,95vh)] bg-black rounded-3xl ring-2 ring-gray-700 shadow-2xl overflow-hidden">
           {/* Screen Bezel */}
           <div className="absolute inset-2 bg-gray-900 rounded-3xl overflow-hidden flex flex-col">
             {/* Status Bar - Fixed at top */}
@@ -80,6 +86,8 @@ function StatusBar({
   musicControls?: { isPlaying: boolean; onToggle: () => void };
   onClose?: () => void;
 }) {
+  const { t } = useLanguage();
+  
   const formatTime = () => {
     return new Date().toLocaleTimeString("en-US", {
       hour: "2-digit",
@@ -141,7 +149,7 @@ function StatusBar({
           <button
             onClick={onClose}
             className="w-5 h-5 bg-red-500 hover:bg-red-600 rounded-full flex items-center justify-center transition-colors duration-200"
-            aria-label="Close phone"
+            aria-label={t("phone.closeButton")}
           >
             <X size={12} className="text-white" />
           </button>
