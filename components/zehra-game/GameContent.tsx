@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import classNames from "classnames";
 import { AnimatePresence } from "framer-motion";
 import Image from "next/image";
@@ -313,6 +313,13 @@ const PhoneComponent = ({
   const [isLockDialogOpen, setIsLockDialogOpen] = useState(false);
   const [isContentOpen, setIsContentOpen] = useState(false);
 
+  useEffect(() => {
+    const savedUnlockState = sessionStorage.getItem(`phone-unlocked-${owner}`);
+    if (savedUnlockState === "true") {
+      setIsUnlocked(true);
+    }
+  }, [owner]);
+
   const handleClick = () => {
     if (isUnlocked) {
       setIsContentOpen(true);
@@ -323,6 +330,7 @@ const PhoneComponent = ({
 
   const handleUnlock = () => {
     setIsUnlocked(true);
+    sessionStorage.setItem(`phone-unlocked-${owner}`, "true");
     setIsLockDialogOpen(false);
     setIsContentOpen(true);
   };
