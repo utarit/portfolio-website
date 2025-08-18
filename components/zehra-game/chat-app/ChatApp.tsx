@@ -218,7 +218,7 @@ const ChatApp = ({
             >
               <div
                 className={classNames(
-                  "max-w-[250px] px-3 py-2 shadow-lg text-sm",
+                  "max-w-[250px] px-3 py-2 shadow-lg text-sm text-left",
                   {
                     "bg-blue-500 text-white rounded-xl rounded-br-none":
                       message.person === "me",
@@ -245,7 +245,7 @@ const ChatApp = ({
                 {message.time && (
                   <div
                     className={classNames("text-xs mt-1", {
-                      "text-blue-100": message.person === "me",
+                      "text-blue-100 text-right": message.person === "me",
                       "text-gray-400": message.person !== "me",
                     })}
                   >
