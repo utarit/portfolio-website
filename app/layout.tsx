@@ -2,7 +2,9 @@ import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import classNames from "classnames";
 import type { Metadata } from "next";
-import Script from "next/script";
+import { cookies } from "next/headers";
+
+import { ThemeProvider } from "@/contexts/ThemeContext";
 
 import { documentFont, headingFont } from "./fonts";
 
@@ -57,11 +59,25 @@ export const metadata: Metadata = {
   ],
 };
 
-export default function RootLayout({
+async function getThemeClass(): Promise<string> {
+  const cookieStore = await cookies();
+  const themeCookie = cookieStore.get("theme");
+  const themeFromStorage = themeCookie?.value || "system";
+
+  if (themeFromStorage === "dark") {
+    return "dark";
+  }
+
+  return "";
+}
+
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const themeClass = await getThemeClass();
+
   return (
     <html
       lang="en"
@@ -69,13 +85,13 @@ export default function RootLayout({
         documentFont.variable,
         headingFont.variable,
         "h-full",
+        themeClass,
       )}
     >
-      <head>
-        <Script src="/theme.js" />
-      </head>
       <body className="bg-background-50 text-text-primary h-full">
-        {children}
+        <ThemeProvider>
+          {children}
+        </ThemeProvider>
         <Analytics />
         <SpeedInsights />
       </body>

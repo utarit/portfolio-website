@@ -1,62 +1,15 @@
 "use client";
 
-import React, { ChangeEvent, useCallback, useEffect, useState } from "react";
+import { ChangeEvent } from "react";
 
-type Theme = "system" | "light" | "dark";
+import { useTheme } from "@/contexts/ThemeContext";
 
 const ThemeToggle = () => {
-  const [theme, setTheme] = useState<Theme>("system");
+  const { theme, setTheme } = useTheme();
 
-  useEffect(() => {
-    const themeFromStorage = localStorage.getItem("theme");
-    if (themeFromStorage) {
-      setTheme(themeFromStorage as Theme);
-    }
-  }, []);
-
-  useEffect(() => {
-    const handleEvent = (event: MediaQueryListEvent) => {
-      const themeFromStorage = localStorage.getItem("theme");
-
-      if (themeFromStorage !== "system") return;
-
-      const newColorScheme = event.matches ? "dark" : "light";
-      if (newColorScheme === "dark") {
-        document.documentElement.classList.add("dark");
-      } else {
-        document.documentElement.classList.remove("dark");
-      }
-    };
-
-    window
-      .matchMedia("(prefers-color-scheme: dark)")
-      .addEventListener("change", handleEvent);
-
-    return () =>
-      window
-        .matchMedia("(prefers-color-scheme: dark)")
-        .removeEventListener("change", handleEvent);
-  }, []);
-
-  const handleChange = useCallback((event: ChangeEvent<HTMLSelectElement>) => {
-    const value = event.target.value as Theme;
-
-    setTheme(value);
-    localStorage.setItem("theme", value);
-
-    if (value === "dark") {
-      document.documentElement.classList.add("dark");
-    } else if (value === "light") {
-      document.documentElement.classList.remove("dark");
-    } else {
-      // value === system
-      if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-        document.documentElement.classList.add("dark");
-      } else {
-        document.documentElement.classList.remove("dark");
-      }
-    }
-  }, []);
+  const handleChange = (event: ChangeEvent<HTMLSelectElement>) => {
+    setTheme(event.target.value as "system" | "light" | "dark");
+  };
 
   return (
     <label>
