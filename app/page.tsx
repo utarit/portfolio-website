@@ -29,10 +29,7 @@ export default function Home() {
         <section>
           <SectionHeading>Introduction</SectionHeading>
           <p className="text-justify">
-            I&apos;m a passionate caffeine enthusiast and METU graduate with a
-            love for user experience and problem-solving. My goal is to deliver
-            efficient, stylish, and accessible solutions to real-world
-            challenges while making a positive impact through my work.
+            I&apos;m a passionate <span className="line-through">caffeine</span> tea enthusiast and game designer (board games, treasure hunts, and more) with a deep interest in UX topics like usability and accessibility. I focus on creating efficient, stylish, and accessible solutions to real‑world challenges — and connecting with the people who use them.
           </p>
           <Button className="mt-4" href="/works">
             My Works &gt;
@@ -42,27 +39,18 @@ export default function Home() {
           <SectionHeading>What I do (TL;DR)</SectionHeading>
           <ul className="py-4 flex flex-col gap-2 list-disc">
             <li>
-              I am a full-time Software Engineer with a strong experience on
-              Front-end side of the stack. (Both mobile and web)
+              I’m a full-time Software Engineer with strong experience on the front-end side of the stack.            </li>
+            <li>
+              I design puzzle games and treasure hunts for events, organizations, and individuals.
             </li>
             <li>
-              I create puzzle games and treasure hunts for events, companies and
-              organizations.
-            </li>
-            <li>
-              I review and redesign various resumes. I do it now from{"  "}
-              <Link
-                className="underline text-primary-500 hover:text-primary-400"
-                href="https://www.linkedin.com/services/page/94044132028a119877/"
-              >
-                Linkedin
-              </Link>
+              I write articles about software development, UX, and accessibility on Medium.
             </li>
           </ul>
         </section>
         <section>
           <SectionHeading>
-            A Mystery Game: Zehra is Missing (now also in English!)
+            A Mystery Game: Zehra is Missing (English / Turkish)
           </SectionHeading>
           <Image
             height="400"

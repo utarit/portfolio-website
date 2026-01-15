@@ -6,6 +6,22 @@ import GridItem from "@/components/works/GridItem";
 const posts = [
   {
     title:
+      "Creating a chat experience",
+    url:
+      "https://medium.com/heyjobs-tech/creating-a-chat-experience-e8307c594896?utm_source=portfolio",
+    thumbnail:
+      "https://miro.medium.com/v2/resize:fit:1400/format:webp/1*8bdBEj6dc7xoLyEcOaYZwA.png",
+  },
+  {
+    title:
+      "Bringing Scribbles to Life",
+    url:
+      "https://medium.com/heyjobs-tech/bringing-scribbles-to-life-deafe1dcd7e7?utm_source=portfolio",
+    thumbnail:
+      "https://miro.medium.com/v2/resize:fit:1400/format:webp/1*PSCToPx8qmB_Xp4yyCCR2w.png",
+  },
+  {
+    title:
       "Navigating the European Accessibility Act: Developer’s Guide to Inclusive Web",
     url:
       "https://medium.com/heyjobs-tech/navigating-the-european-accessibility-act-developers-guide-to-inclusive-web-bcfb0ee68bfd?utm_source=portfolio",

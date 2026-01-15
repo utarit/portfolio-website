@@ -6,9 +6,10 @@ import { Button } from "@/design-system/Button";
 const ContactPage = () => {
   return (
     <MainLayout>
-      <section>
-        <h2 className="mb-4 text-2xl">Contact me</h2>
-        <form action="https://formspree.io/f/mnqkpdze" method="POST">
+      <h2 className="mb-4 text-2xl">Contact me</h2>
+
+      {/* <section> */}
+      {/* <form action="https://formspree.io/f/mnqkpdze" method="POST">
           <fieldset className="flex flex-col gap-4 border-2 border-orange-400 dark:border-gray-400 p-4 rounded-md">
             <legend className="px-1">The form</legend>
             <label className="flex flex-col gap-2">
@@ -52,12 +53,10 @@ const ContactPage = () => {
             </label>
             <Button type="submit">Send</Button>
           </fieldset>
-        </form>
-      </section>
+        </form> */}
+      {/* </section> */}
 
       <section className="my-4">
-        <h3 className="text-lg mb-2">or just reach me via</h3>
-
         <address>
           <a href="mailto:mertakca.dev@gmail.com">mertakca.dev@gmail.com</a>
         </address>

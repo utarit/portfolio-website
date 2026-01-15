@@ -6,7 +6,7 @@ export const MainLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <>
       <Navbar />
-      <main className="container max-w-xl mx-auto px-4">
+      <main className="container max-w-xl min-h-[calc(100vh-136px)] mx-auto px-4">
         <CatGif />
         {children}
       </main>
