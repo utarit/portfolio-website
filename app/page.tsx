@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 
 import SectionHeading from "@/components/headings/SectionHeading";
 import { MainLayout } from "@/components/layout/main-layout";
