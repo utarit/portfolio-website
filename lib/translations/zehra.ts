@@ -13,7 +13,7 @@ export const translations = {
     gamePdf: "Start Here: Game PDF (EN)",
     socialBanner: "If you enjoyed the game and want more, follow me on Instagram — I’ll be sharing all future games there.",
     pdfLink:
-      "https://docs.google.com/document/d/1JBYExCLctOVK-Qj3HjQPWZglMmt8dP4IZY7BTwEwOl0/edit?usp=sharing",
+      "https://drive.google.com/file/d/1ZwMcrCa_FilEm69G_rt3PJbbMRIUUanT/view?usp=sharing",
     gameDescription: "A Mystery Game: Zehra is Missing",
 
     // Main sections
@@ -239,7 +239,7 @@ export const translations = {
     gamePdf: "Buradan Başlayın: Oyun PDF (TR)",
     socialBanner: "Oyunu beğendiysen ve daha fazlasını görmek istiyorsan, Instagram’dan takip et — yeni oyunları orada paylaşacağım.",
     pdfLink:
-      "https://docs.google.com/document/d/1XYFz_e6lnMz52nTBZoX5tLlucA_K2idL-6nOsze4hU0/edit?usp=sharing",
+      "https://drive.google.com/file/d/1wsIIWTKfEHLVwgmkhSuZJVUS5W3LS8Vk/view?usp=sharing",
     gameDescription: "Bir Gizem Oyunu: Zehra Kayıp",
 
     // Main sections
