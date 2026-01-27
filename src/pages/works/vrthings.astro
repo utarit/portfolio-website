@@ -1,0 +1,40 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import Article from '../../components/astro/Article.astro';
+---
+
+<MainLayout title="VRThings - Mert's Desktop">
+  <div class="max-w-4xl mx-auto px-4 py-8">
+    <Article
+      title="VRThings - Board game platform in VR"
+      year="2020"
+      pills={[
+        {
+          label: 'Website',
+          value: 'https://senior.ceng.metu.edu.tr/2020/vrthings',
+        },
+        {
+          label: 'Video',
+          value: 'https://www.youtube.com/watch?v=o9STC2rdFmE',
+        },
+        {
+          label: 'Platform',
+          value: 'Oculus, Windows',
+        },
+        {
+          label: 'Stack',
+          value: 'Unity, C#, Oculus API',
+        },
+      ]}
+      images={['/images/vrthings.png']}
+    >
+      <p class="indent-4">
+        VRThings is a board game platform for VR devices that brings enthusiasts
+        and distant friends together through cutting-edge virtual reality. Enjoy
+        realistic environments and multiplayer support, play various games with 2
+        to 6 people, and experience it all with your Oculus Quest wireless headset
+        and VR controllers.
+      </p>
+    </Article>
+  </div>
+</MainLayout>

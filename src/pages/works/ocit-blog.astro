@@ -1,0 +1,33 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import Article from '../../components/astro/Article.astro';
+---
+
+<MainLayout title="OCİT Blog - Mert's Desktop">
+  <div class="max-w-4xl mx-auto px-4 py-8">
+    <Article
+      title="OCİT Blog"
+      year="2021"
+      pills={[
+        {
+          label: 'Website',
+          value: 'https://ocit.vercel.app',
+        },
+        {
+          label: 'Platform',
+          value: 'Web',
+        },
+        {
+          label: 'Stack',
+          value: 'React, TypeScript, Next.js, Tailwind CSS, GraphQL, GraphCMS',
+        },
+      ]}
+      images={['/images/ocit-blog.png', '/images/ocit-blog2.png']}
+    >
+      <p class="indent-4">
+        Official website of METU Lifesaving and First Aid Society. People can read
+        the latest news, get to know us and can comment on the blog posts.
+      </p>
+    </Article>
+  </div>
+</MainLayout>

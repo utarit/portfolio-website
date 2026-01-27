@@ -1,56 +1,43 @@
-# Portfolio Website
+# Astro Starter Kit: Minimal
 
-Welcome to my personal portfolio website repository. This project showcases my work, skills, and experience as a developer.
+```sh
+bun create astro@latest -- --template minimal
+```
 
-## Live Site
+> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
 
-You can visit the live version of my portfolio at [mertakca.vercel.app](https://mertakca.vercel.app).
+## 🚀 Project Structure
 
-## Technologies Used
+Inside of your Astro project, you'll see the following folders and files:
 
-- **Framework**: [Next.js](https://nextjs.org/) - A React framework for server-side rendering and static site generation.
-- **Styling**: [Tailwind CSS](https://tailwindcss.com/) - A utility-first CSS framework for rapid UI development.
-- **Language**: TypeScript - A statically typed superset of JavaScript.
+```text
+/
+├── public/
+├── src/
+│   └── pages/
+│       └── index.astro
+└── package.json
+```
 
-## Features
+Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
 
-- **Responsive Design**: Optimized for various screen sizes and devices.
-- **Projects Showcase**: Displays a selection of my projects with descriptions and links.
-- **Contact Form**: Allows visitors to get in touch with me directly through the website.
+There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
 
-## Getting Started
+Any static assets, like images, can be placed in the `public/` directory.
 
-To run this project locally, follow these steps:
+## 🧞 Commands
 
-1. **Clone the repository**:
+All commands are run from the root of the project, from a terminal:
 
-   ```bash
-   git clone https://github.com/utarit/portfolio-website.git
-   cd portfolio-website
-   ```
+| Command                   | Action                                           |
+| :------------------------ | :----------------------------------------------- |
+| `bun install`             | Installs dependencies                            |
+| `bun dev`             | Starts local dev server at `localhost:4321`      |
+| `bun build`           | Build your production site to `./dist/`          |
+| `bun preview`         | Preview your build locally, before deploying     |
+| `bun astro ...`       | Run CLI commands like `astro add`, `astro check` |
+| `bun astro -- --help` | Get help using the Astro CLI                     |
 
-2. **Install dependencies**:
+## 👀 Want to learn more?
 
-   ```bash
-   npm install
-   # or
-   yarn install
-   ```
-
-3. **Run the development server**:
-
-   ```bash
-   npm run dev
-   # or
-   yarn dev
-   ```
-
-Open http://localhost:3000 in your browser to see the result.
-
-## Contributing
-
-I appreciate feedback and suggestions. If you have any ideas to improve the site, please open an issue or submit a pull request.
-
-## License
-
-This project is open source and available under the MIT License.
+Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).

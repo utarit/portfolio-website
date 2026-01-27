@@ -1,0 +1,38 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import Article from '../../components/astro/Article.astro';
+---
+
+<MainLayout title="HeyJobs - Mert's Desktop">
+  <div class="max-w-4xl mx-auto px-4 py-8">
+    <Article
+      title="HeyJobs"
+      year="2023"
+      pills={[
+        {
+          label: 'Website',
+          value: 'https://www.heyjobs.co/',
+        },
+        {
+          label: 'Platform',
+          value: 'Web',
+        },
+        {
+          label: 'Stack',
+          value: 'React.js, TypeScript, Next.js, Storybook, MUI, Growthbook, Ruby on Rails, PostgreSQL, Docker, CircleCI',
+        },
+      ]}
+      images={['/images/heyjobs.svg']}
+    >
+      <p class="indent-4">
+        Our purpose at HeyJobs is to enable everyone to find the right job to live
+        a fulfilling life.
+      </p>
+      <p class="indent-4">
+        To achieve this, we aim to build the fastest growing talent platform in
+        Europe, leveraging Machine Learning algorithms 🧠, cutting-edge technology
+        🚀 and performance marketing 📊 to perfectly match talent and jobs.
+      </p>
+    </Article>
+  </div>
+</MainLayout>
