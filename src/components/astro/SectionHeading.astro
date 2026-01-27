@@ -1,0 +1,18 @@
+---
+import classNames from 'classnames';
+
+interface Props {
+  class?: string;
+}
+
+const { class: className } = Astro.props;
+---
+
+<h3
+  class={classNames(
+    'text-xl underline underline-offset-4 my-3 decoration-zinc-600 decoration-4',
+    className
+  )}
+>
+  <slot />
+</h3>

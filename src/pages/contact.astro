@@ -1,0 +1,28 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import { Button } from '../components/solid/Button';
+---
+
+<MainLayout title="Contact - Mert Akça">
+  <div class="max-w-4xl mx-auto px-4 py-8">
+    <h2 class="mb-4 text-2xl font-bold">Contact me</h2>
+
+    <section class="my-4">
+      <address class="not-italic">
+        <a href="mailto:mertakca.dev@gmail.com" class="text-primary-600 hover:underline">
+          mertakca.dev@gmail.com
+        </a>
+      </address>
+
+      <Button
+        client:load
+        color="primary"
+        class="mt-4"
+        target="_blank"
+        href="https://linkedin.com/in/mertakca"
+      >
+        My Linkedin
+      </Button>
+    </section>
+  </div>
+</MainLayout>

@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-heading: 'Your Heading Font', system-ui, sans-serif;
+  --font-body: 'Your Body Font', system-ui, sans-serif;
+}
+
+html {
+  @apply h-full;
+}
+
+body {
+  @apply h-full bg-background-50 text-text-primary;
+}
+
+html.dark body {
+  @apply bg-gray-900 text-gray-100;
+}

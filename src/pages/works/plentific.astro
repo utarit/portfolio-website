@@ -1,0 +1,34 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import Article from '../../components/astro/Article.astro';
+---
+
+<MainLayout title="Plentific - Mert's Desktop">
+  <div class="max-w-4xl mx-auto px-4 py-8">
+    <Article
+      title="Plentific"
+      year="2021"
+      pills={[
+        {
+          label: 'Website',
+          value: 'https://www.plentific.com/',
+        },
+        {
+          label: 'Platform',
+          value: 'Web',
+        },
+        {
+          label: 'Stack',
+          value: 'React.js, TypeScript, React Query, Storybook, MUI, CI/CD',
+        },
+      ]}
+      images={['/images/plentific.png', '/images/plentific2.png']}
+    >
+      <p class="indent-4">
+        Plentific empowers landlords and property managers to deliver repairs,
+        compliance, voids and resident services through a simple work order
+        management platform and a network of trade professionals.
+      </p>
+    </Article>
+  </div>
+</MainLayout>

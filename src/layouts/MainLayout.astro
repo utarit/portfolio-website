@@ -1,0 +1,90 @@
+---
+import '../styles/global.css';
+import Navbar from '../components/solid/Navbar';
+import Footer from '../components/astro/Footer.astro';
+
+interface Props {
+  title?: string;
+  description?: string;
+  keywords?: string;
+  ogImage?: string;
+  ogUrl?: string;
+  twitterCard?: string;
+  twitterTitle?: string;
+  twitterDescription?: string;
+  twitterImage?: string;
+}
+
+const { 
+  title = "Mert Akça - Front-end Engineer & UX Enthusiast",
+  description = "Passionate front-end developer and game creator. Explore my projects, including the intriguing mystery game 'Zehra is Missing.'",
+  keywords = "front-end developer, game creator, puzzle game, mystery game, Zehra is Missing, Mert Akça, problem-solving, efficient solutions, stylish solutions, accessible solutions, METU graduate, caffeine addict, short film director, escape room enthusiast, LinkedIn, GitHub, Medium",
+  ogImage = "/cat-drinking.gif",
+  ogUrl = "https://mertsdesk.top/",
+  twitterCard = "summary",
+  twitterTitle = title,
+  twitterDescription = description,
+  twitterImage = ogImage,
+} = Astro.props;
+
+const currentPath = Astro.url.pathname;
+---
+
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    
+    <!-- Favicons -->
+    <link rel="shortcut icon" href="/favicon-32x32.png" type="image/png" />
+    <link rel="icon" href="/favicon-32x32.png" type="image/png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    
+    <!-- Open Graph -->
+    <meta property="og:site_name" content="Mert's Desktop" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={ogUrl} />
+    <meta property="og:image" content={ogImage} />
+    
+    <!-- Canonical -->
+    <link rel="canonical" href={ogUrl} />
+    
+    <!-- Keywords -->
+    <meta name="keywords" content={keywords} />
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content={twitterCard} />
+    <meta name="twitter:title" content={twitterTitle} />
+    <meta name="twitter:description" content={twitterDescription} />
+    <meta name="twitter:image" content={twitterImage} />
+    <meta name="twitter:site" content={ogUrl} />
+    
+    <!-- Theme script (inline to prevent flash) -->
+    <script is:inline src="/theme.js"></script>
+  </head>
+  <body class="h-full flex flex-col">
+    <Navbar client:load currentPath={currentPath} />
+    
+    <main class="flex-1">
+      <slot />
+    </main>
+    
+    <Footer />
+    
+    <!-- Analytics -->
+    <script>
+      import { inject } from '@vercel/analytics';
+      import { injectSpeedInsights } from '@vercel/speed-insights';
+      inject();
+      injectSpeedInsights();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,18 @@
+---
+import { Button } from '../solid/Button';
+import ThemeToggle from '../solid/ThemeToggle';
+---
+
+<footer class="py-4 text-sm flex flex-col sm:flex-row justify-around gap-4 p-2 items-center bg-background-200 dark:bg-gray-800 dark:text-white">
+  <p class="dark:text-white">Made by Mert Akça with 🧋 and 🎧</p>
+  <Button
+    client:load
+    href="https://github.com/utarit/portfolio-website"
+    target="_blank"
+    variant="text"
+    size="sm"
+  >
+    Source code
+  </Button>
+  <ThemeToggle client:load />
+</footer>

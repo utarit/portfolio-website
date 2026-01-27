@@ -1,0 +1,35 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import Article from '../../components/astro/Article.astro';
+---
+
+<MainLayout title="Zehra is missing - Mert's Desktop">
+  <div class="max-w-4xl mx-auto px-4 py-8">
+    <Article
+      title="Zehra is missing"
+      year="2023"
+      pills={[
+        {
+          label: 'Website',
+          value: 'https://mertsdesk.top/zehra',
+        },
+        {
+          label: 'Platform',
+          value: 'Printible, Web',
+        },
+        {
+          label: 'Stack',
+          value: 'Creativity, Music, Google Docs, Next.js, Tailwind CSS',
+        },
+      ]}
+      images={['/zehra/cork-board-en.png']}
+    >
+      <p class="indent-4">
+        Proudly, I am the founder of the game 'Zehra is missing' which
+        is a mystery solving game series with both printed and interactive
+        elements. Only one game (with only Turkish language for now) is out now,
+        translations and the rest of the series is under development.
+      </p>
+    </Article>
+  </div>
+</MainLayout>

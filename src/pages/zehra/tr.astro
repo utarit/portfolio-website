@@ -1,0 +1,18 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import { ZehraGameWrapper } from '../../components/solid/ZehraGameWrapper';
+---
+
+<MainLayout 
+  title="Zehra Kayıp · Dedektif Deneyimi · İnteraktif Suç Çözme Oyunu"
+  description="Heyecan verici suç bulmacalarını çözün, dedektiflik becerilerinizi test edin. Aile eğlencesi ve stratejik oyun için mükemmel!"
+  keywords="suç çözme oyunu, dedektif oyunu, masa oyunu, gizem, macera, bulmaca, aile oyunu, strateji oyunu, Türkçe"
+  ogImage="/images/zehra-missing.jpeg"
+  ogUrl="https://mertsdesk.top/zehra/tr"
+  twitterCard="summary_large_image"
+  twitterTitle="Zehra Kayıp - İnteraktif Suç Çözme Oyunu"
+  twitterDescription="Sürükleyici bir suç çözme oyunuyla heyecan verici dünyayı keşfedin. Sırları çözün, dedektiflik becerilerinizi test edin ve heyecan verici bir oyun deneyiminin tadını çıkarın. Aile eğlencesi ve stratejik oyun için mükemmel."
+  twitterImage="/images/zehra-missing.jpeg"
+>
+  <ZehraGameWrapper client:load initialLanguage="tr" />
+</MainLayout>

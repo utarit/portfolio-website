@@ -1,0 +1,106 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import { Button } from '../components/solid/Button';
+import SocialButton from '../components/solid/SocialButton';
+import CatGif from '../components/astro/CatGif.astro';
+---
+
+<MainLayout>
+  <article class="flex flex-col mb-8 gap-8 max-w-4xl mx-auto px-4 py-8">
+    <CatGif />
+    <section class="flex justify-between gap-4 items-start">
+      <header>
+        <h2 class="text-4xl">Mert Akça</h2>
+        <p aria-hidden class="text-sm mb-1">
+          <i lang="en">/Mehrt AHK-chah/</i>
+        </p>
+        <p>Software engineer / UX enthusiast / Game designer</p>
+      </header>
+      <img
+        class="rounded-full border-2 border-opacity-80 border-white"
+        src="/images/me.jpeg"
+        alt="A photo of me"
+        width={100}
+        height={100}
+      />
+    </section>
+
+    <section>
+      <h3 class="text-2xl mb-4 font-bold">Introduction</h3>
+      <p class="text-justify">
+        I'm a passionate <span class="line-through">caffeine</span> tea enthusiast and game designer (board games, treasure hunts, and more) with a deep interest in UX topics like usability and accessibility. I focus on creating efficient, stylish, and accessible solutions to real‑world challenges — and connecting with the people who use them.
+      </p>
+      <Button client:load href="/works" class="mt-4">
+        My Works &gt;
+      </Button>
+    </section>
+
+    <section>
+      <h3 class="text-2xl mb-4 font-bold">What I do (TL;DR)</h3>
+      <ul class="py-4 flex flex-col gap-2 list-disc pl-6">
+        <li>
+          I'm a full-time Software Engineer with strong experience on the front-end side of the stack.
+        </li>
+        <li>
+          I design puzzle games and treasure hunts for events, organizations, and individuals.
+        </li>
+        <li>
+          I write articles about software development, UX, and accessibility on Medium.
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h3 class="text-2xl mb-4 font-bold">
+        A Mystery Game: Zehra is Missing (English / Turkish)
+      </h3>
+      <img
+        height="400"
+        width="400"
+        src="/images/zehra-missing.jpeg"
+        alt="Zehra Kayıp, Aranıyor"
+        class="rounded-lg"
+      />
+      <p class="my-2">
+        Uncover the truth behind a woman's mysterious disappearance
+        four days ago. Dive deep into a case that's more twisted than
+        it seems, filled with intricate puzzles and challenges.
+      </p>
+      <p>
+        Embark on a thrilling journey to find the missing woman. Use your
+        detective instincts to follow the clues and solve the mystery.
+        'Zehra is Missing' awaits!
+      </p>
+
+      <Button
+        client:load
+        href="/zehra"
+        target="_blank"
+        class="mt-4"
+      >
+        Game Page &gt;
+      </Button>
+    </section>
+
+    <section>
+      <h3 class="text-2xl mb-4 font-bold">Further Links</h3>
+      <ul class="flex flex-col gap-2">
+        <li>
+          <SocialButton client:load href="https://linkedin.com/in/mertakca">
+            Linkedin @mertakca
+          </SocialButton>
+        </li>
+        <li>
+          <SocialButton client:load href="https://github.com/utarit">
+            GitHub @utarit
+          </SocialButton>
+        </li>
+        <li>
+          <SocialButton client:load href="https://medium.com/@mertakca">
+            Medium @mertakca
+          </SocialButton>
+        </li>
+      </ul>
+    </section>
+  </article>
+</MainLayout>

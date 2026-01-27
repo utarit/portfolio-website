@@ -1,0 +1,47 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import Article from '../../components/astro/Article.astro';
+import Banner from '../../components/astro/Banner.astro';
+---
+
+<MainLayout title="React Welcome Page - Mert's Desktop">
+  <div class="max-w-4xl mx-auto px-4 py-8">
+    <Article
+      title="React Welcome Page"
+      year="2018"
+      pills={[
+        {
+          label: 'NPM',
+          value: 'https://www.npmjs.com/package/react-welcome-page',
+        },
+        {
+          label: 'GitHub',
+          value: 'https://github.com/utarit/react-welcome-page',
+        },
+        {
+          label: 'Demo',
+          value: 'https://utarit.github.io/react-welcome-page-color-form',
+        },
+        {
+          label: 'Stack',
+          value: 'React, React Native, CSS',
+        },
+      ]}
+      images={[
+        '/images/react-welcome-page.gif',
+        '/images/react-welcome-page-demo.png',
+      ]}
+    >
+      <p>
+        Simple animated customizable welcome screen component that works for
+        both React and React Native platforms.
+      </p>
+      <Banner emoji="📱">
+        <small>
+          My first time using abstraction in practice here thanks to{' '}
+          <code>*.android.js, *.native.js</code> extensions.
+        </small>
+      </Banner>
+    </Article>
+  </div>
+</MainLayout>
